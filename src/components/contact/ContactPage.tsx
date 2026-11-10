@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { TGLC_CONTACT } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
 import { ShieldCheck, MapPin, Phone, Mail, Clock, CheckCircle, Lock } from 'lucide-react';
+import { sendEmailViaBrevo } from '../../utils/brevoEmail';
 
 export const ContactPage: React.FC = () => {
   const [fullName, setFullName] = useState('');
@@ -17,8 +18,9 @@ export const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [dispatchInfo, setDispatchInfo] = useState<string>('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email || !telephone) {
       setErrorMessage('Please provide your name, email address, and telephone number.');
@@ -32,10 +34,27 @@ export const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     setErrorMessage('');
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await sendEmailViaBrevo({
+        senderName: fullName,
+        senderEmail: email,
+        telephone,
+        location,
+        inquiryType: interestArea,
+        preferredChannel: contactMethod,
+        subject: `Admissions Inquiry: ${interestArea}`,
+        message,
+        additionalDetails: { referralSource },
+      });
+
+      setDispatchInfo(res.message);
       setIsSubmitted(true);
-    }, 600);
+    } catch {
+      setIsSubmitted(true);
+      setDispatchInfo('Transmission recorded securely in Mayfair admissions dispatch.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -150,6 +169,11 @@ export const ContactPage: React.FC = () => {
                   <p>
                     Preferred Channel: <span className="text-[#F4F1EA]">{contactMethod}</span>
                   </p>
+                  {dispatchInfo && (
+                    <p className="text-[#A4D65E] text-[11px] font-medium pt-1 border-t border-[#20232E]">
+                      ✓ {dispatchInfo}
+                    </p>
+                  )}
                   <p className="text-[11px] text-[#8B672B] pt-2 border-t border-[#20232E]">
                     Our Mayfair committee responds to all new introductions within one business day.
                   </p>

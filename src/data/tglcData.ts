@@ -183,9 +183,9 @@ export const SERVICES_DATA: ServiceCategory[] = [
     overview: 'From a last-minute departure from Farnborough to a month-long exploration of the Japanese archipelago, our travel desk plans each journey with exacting precision. We maintain direct relationships with owner-operators of heavy jets, superyacht brokers, and private estate custodians, ensuring absolute safety, confidentiality, and seamless door-to-door transit.',
     heroImage: '/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png',
     galleryImages: [
-      '/assets/aistudio/6a194620490b49214619b628_file_8wpx83o3_8d7f9f53.png',
-      '/assets/aistudio/Main-5_c9bf5214.png',
-      '/assets/aistudio/6a5e4f29ca98c820c85071cd_file_l7dpoy6z_91be91a5.png'
+      '/assets/aistudio/private_jet_interior_suite.jpg',
+      '/assets/aistudio/SSB7Se1D48BQSnNL_dd2452d5.png',
+      '/assets/aistudio/6a194620490b49214619b628_file_8wpx83o3_8d7f9f53.png'
     ],
     features: [
       'Direct coordination with vetted Part 135 / AOC private aircraft operators',
@@ -763,16 +763,16 @@ export const SERVICES_DATA: ServiceCategory[] = [
     overview: 'Mobility should be calm, punctual, and invisible. We coordinate premium chauffeured transfers, bespoke luxury vehicle procurement, and discreet personal protection services. Our focus is never on ostentation or militaristic display; it is on quiet professionalism, route intelligence, defensive driving, and respectful discretion.',
     heroImage: '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp',
     galleryImages: [
+      '/assets/aistudio/close_protection_security.jpg',
+      '/assets/aistudio/luxury_sprinter_jetvan.jpg',
       '/assets/aistudio/rolls-cullian-featured_a41abfa9.webp',
-      '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp',
-      '/assets/aistudio/01_BUGATTI-SOC2022_6775a49f.jpg',
-      '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg'
+      '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp'
     ],
     features: [
       'Dedicated, vetted London chauffeurs with advanced defensive driving credentials',
-      'Pristine fleet: latest generation Mercedes-Maybach, Range Rover SV, and Rolls-Royce Phantom',
-      'Discreet close protection coordination via SIA-licensed, British military and police background specialists',
-      'Secure airport tarmac and private terminal transfers across the UK and Europe',
+      'Pristine fleet: Rolls-Royce Phantom, Cullinan, Mercedes-Maybach, and VIP luxury Sprinter JetVans',
+      'Discreet close protection coordination via SIA-licensed, British military, Royal Protection, and police specialists',
+      'Secure airport tarmac and private terminal transfers at RAF Northolt, Farnborough, and Biggin Hill',
       'Digital privacy architecture and digital hygiene advisory for families and family offices'
     ],
     memberScenario: {
@@ -788,7 +788,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
         shortDesc: 'Immaculately maintained vehicles with seasoned, discreet drivers who know London inside out.',
         leadParagraph: 'Our chauffeurs are not merely drivers; they are custodians of your time. They understand city traffic dynamics, back-street navigations, and when to offer conversation or respect quiet focus.',
         detailedPoints: [
-          'Fleet options: Range Rover Autobiography, Mercedes-Benz S-Class, Mercedes-Maybach, Bentley Flying Spur',
+          'Fleet options: Range Rover Autobiography, Mercedes-Benz S-Class, Mercedes-Maybach, Bentley Flying Spur, and VIP Mercedes Sprinter JetVans',
           'Child seats installed to precise manufacturer safety standards with advance notice',
           'Complimentary high-speed onboard Wi-Fi, mineral waters, and current broadsheet newspapers'
         ],
@@ -799,7 +799,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
             outcome: 'Punctual door-to-door transfer, vehicle waiting on standby throughout.'
           }
         ],
-        image: '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp'
+        image: '/assets/aistudio/luxury_sprinter_jetvan.jpg'
       },
       {
         id: 'private-car-sourcing',
@@ -822,13 +822,13 @@ export const SERVICES_DATA: ServiceCategory[] = [
       },
       {
         id: 'executive-protection',
-        title: 'Executive Protection Coordination',
-        shortDesc: 'Discreet, SIA-licensed close protection specialists who blend seamlessly into social settings.',
-        leadParagraph: 'We partner with accredited security specialists who prioritise understated presence over conspicuous displays. Our security personnel are adept at polite deterrence and quiet vigilance.',
+        title: 'Executive Protection & Personal Security',
+        shortDesc: 'Discreet, SIA-licensed close protection specialists and security details who blend seamlessly into social and family settings.',
+        leadParagraph: 'We partner with accredited close protection specialists who prioritise understated presence over conspicuous displays. Our security personnel are drawn from British Armed Forces, Royal Protection, and Diplomatic Protection backgrounds, adept at polite deterrence, advance venue reconnaissance, and quiet family safeguarding.',
         detailedPoints: [
           'Close protection officers with British Armed Forces, Royal Protection, or Metropolitan Police backgrounds',
-          'Advance venue reconnaissance and exit routing for high-profile public appearances',
-          'Family protection: discreet accompaniment during shopping, school journeys, and international travel'
+          'Advance venue reconnaissance, counter-surveillance, and exit routing for high-profile public appearances',
+          'Family protection: discreet accompaniment during shopping, school journeys, galas, and international travel'
         ],
         keyScenarios: [
           {
@@ -837,7 +837,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
             outcome: 'Unobtrusive, professional officer who integrated naturally with full diplomatic poise.'
           }
         ],
-        image: '/assets/aistudio/rolls-cullian-featured_a41abfa9.webp'
+        image: '/assets/aistudio/close_protection_security.jpg'
       },
       {
         id: 'secure-travel-event-logistics',
@@ -1460,6 +1460,95 @@ export const CALENDAR_EVENTS: CalendarEvent[] = [
     curatorNote: 'Overnight accommodation available in the estate’s guest suites.',
     isPrivateInvitation: false,
     image: '/assets/aistudio/hidden_secret_gastronomy_1794295323821.jpg'
+  },
+  {
+    id: 'cal-19',
+    title: 'Royal Enclosure & Guards Polo International Day',
+    category: 'Sport',
+    dates: '26 July 2026',
+    month: 'JULY',
+    day: 26,
+    location: 'Guards Polo Club, Smith’s Lawn, Windsor Great Park',
+    neighbourhood: 'Windsor',
+    description: 'The pinnacle of high-goal summer polo. Private reserved pitchside clubhouse marquee with Laurent-Perrier champagne reception, four-course seated luncheon, and premier clubhouse lawn viewing.',
+    curatorNote: 'Helicopter transfers from London Heliport Battersea to Windsor Great Park.',
+    isPrivateInvitation: true,
+    image: '/assets/aistudio/cotswolds_manor_estate.jpg',
+    badge: 'Royal Enclosure'
+  },
+  {
+    id: 'cal-20',
+    title: 'Farnborough International Executive Static Display & Flight Line Access',
+    category: 'Private Invitations',
+    dates: '22 July 2026',
+    month: 'JULY',
+    day: 22,
+    location: 'TAG Aviation FBO, Farnborough Airport',
+    neighbourhood: 'Farnborough',
+    description: 'Private morning viewing of next-generation ultra-long-range business aviation flagships (Bombardier Global 8000 and Gulfstream G700). Private briefing with chief flight engineers.',
+    curatorNote: 'Chauffeured VIP Sprinter JetVan transfer directly from 45 Albemarle Street.',
+    isPrivateInvitation: true,
+    image: '/assets/aistudio/luxury_sprinter_jetvan.jpg',
+    badge: 'Executive Flight Line'
+  },
+  {
+    id: 'cal-21',
+    title: 'Bond Street Closed-Door High Jewellery Night & Gemmological Salons',
+    category: 'Fashion',
+    dates: '10 September 2026',
+    month: 'SEPTEMBER',
+    day: 10,
+    location: 'New Bond Street Private Penthouse Suites',
+    neighbourhood: 'Mayfair',
+    description: 'An exclusive after-hours evening across three premier Bond Street maisons. View museum-grade untreated natural stones (Kashmir sapphires, Colombian emeralds) in private salons.',
+    curatorNote: 'Private security escort provided by Julian Sterling’s close protection team.',
+    isPrivateInvitation: true,
+    image: '/assets/aistudio/bond_street_jewellery.jpg',
+    badge: 'Closed-Door Salons'
+  },
+  {
+    id: 'cal-22',
+    title: 'Sub-Thames Stealth Midnight River Launch & Tower Bridge Opening',
+    category: 'London After Dark',
+    dates: '14 August 2026',
+    month: 'AUGUST',
+    day: 14,
+    location: 'Private Mooring, St Katharine Docks & Tower Pier',
+    neighbourhood: 'The City',
+    description: 'Embark upon our custom carbon-stealth launch at 23:30. Private river transit past lit monuments, synchronized private bascule opening of Tower Bridge, and midnight champagne supper onboard.',
+    curatorNote: 'Strictly 8 guests. Direct chauffeured boarding at private river gate.',
+    isPrivateInvitation: true,
+    image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
+    badge: 'Sub-Rosa Nocturne'
+  },
+  {
+    id: 'cal-23',
+    title: 'Blenheim Palace & Cotswolds Classic Concours d’Elegance',
+    category: 'Sport',
+    dates: '2 – 5 September 2026',
+    month: 'SEPTEMBER',
+    day: 3,
+    location: 'Blenheim Palace, Woodstock, Oxfordshire',
+    neighbourhood: 'Oxfordshire',
+    description: 'Salon Privé VIP pavilion access on the lawns of Blenheim Palace. Private viewing of legendary pre-war coachbuilt vehicles and limited-production modern hypercars.',
+    curatorNote: 'Private dining pavilions and driver introductions arranged turnkey.',
+    isPrivateInvitation: false,
+    image: '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp'
+  },
+  {
+    id: 'cal-24',
+    title: 'Private St James’s Bullion Vault Supper & Antiquarian Coin Study',
+    category: 'Private Invitations',
+    dates: '16 October 2026',
+    month: 'OCTOBER',
+    day: 16,
+    location: 'Historic Subterranean Bullion Chamber, Pall Mall',
+    neighbourhood: 'St James’s',
+    description: 'An extraordinary subterranean evening inside a 280-year-old subterranean bullion vault. Candlelit supper for ten members surrounded by historical sovereign numismatic archives.',
+    curatorNote: 'Encrypted venue coordinates and pass-phrase issued 4 hours prior.',
+    isPrivateInvitation: true,
+    image: '/assets/aistudio/hidden_subterranean_vault_1794295323175.jpg',
+    badge: 'Sanctum Vault'
   }
 ];
 
@@ -1672,7 +1761,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'The Art of the Perfect London Weekend',
     subtitle: 'From Friday dusk in Mayfair to Sunday stillness in Kensington Gardens.',
     category: 'London Intelligence',
-    readTime: '5 min read',
+    readTime: '12 min read',
     publishDate: '02 October 2026',
     author: 'Camilla Vance-Moreau',
     authorRole: 'Director of Private Office & Client Relations',
@@ -1680,7 +1769,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     heroImage: '/assets/aistudio/U2xzhqR8NqpZGDRNVta6Gk_fe26a8c6.jpg',
     pullQuote: 'A great London weekend is not about packing an itinerary; it is about leaving enough space between appointments for the city to surprise you.',
     contentParagraphs: [
-      'London on a weekend possesses a distinct personality. The financial pulse of the City slows, and the capital transforms into a tapestry of villages, each with its own rhythm.',
+      'London on a weekend possesses a distinct personality. The financial pulse of the City slows, and the capital transforms into a tapestry of villages, each with its own rhythm and unhurried charm.',
       'Friday evening should begin with civilized restraint: a dry martini in St James’s, where the olive is cold and the room is serene, followed by an intimate dinner at a small, chef-driven restaurant where the menu fits on a single card.',
       'Saturday belongs to early movement. Walking through Holland Park before the morning dog walkers arrive, followed by an unhurried visit to an antiquarian bookseller or contemporary gallery where the curator is free to talk. In the evening, the theater remains unmatched, provided one has a private drawing room for the interval.',
       'Sunday should be protected fiercely. A long, multi-generational lunch in a private room overlooking a garden square, an afternoon stroll through the Royal Parks, and an early evening fire in the library. This is London at its most restorative.'
@@ -1688,6 +1777,29 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/tglc_st_james_salon.jpg',
       '/assets/aistudio/royal_opera_gallery.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Friday Dusk: The Ritual of the First Pour',
+        paragraphs: [
+          'The transition from executive velocity to weekend calm is marked by ceremony. In St James’s, several private hotel bars and club drawing rooms understand the exact mathematics of a dry Gibson or Vesper: frozen crystal coupe, Gordon’s export strength or Tanqueray No. Ten, and an atomized rinse of Noilly Prat.',
+          'At TGLC House, our third-floor salon hosts members concluding cross-border transactions before heading to Mount Street or Curzon Street for dinner. By arranging private booths in advance, we eliminate the awkward theatre of negotiating seating with front-of-house staff.'
+        ]
+      },
+      {
+        title: 'Saturday Midday: The Art of Quiet Browsing',
+        paragraphs: [
+          'Few pleasures rival the quiet antiquarian bookshops of Cecil Court and the tucked-away print galleries of Pall Mall. Here, behind leaded glass windows, specialists hold first editions of Evelyn Waugh, hand-coloured 18th-century botanical engravings, and architectural folios that were once bound for country house libraries.',
+          'Our cultural team arranges for shop owners to pull specific archival portfolios matching our members’ personal collections, transforming a casual morning stroll into a masterclass in bibliography.'
+        ]
+      },
+      {
+        title: 'Sunday Sanctuary: Protecting the Family Table',
+        paragraphs: [
+          'A proper Sunday lunch in London should occupy at least four hours. Whether overlooking the gardens of Chelsea Physic Garden or seated in a private panelled dining room in Belgravia, the table should be generous: English roast beef with proper dripping yorkshires, seasonal greens, and carafes of mature Claret.',
+          'By delegating all domestic provisioning and table arrangements to your Lifestyle Manager, the Sunday table returns to what it was always intended to be: a joyful, restorative anchor for the household.'
+        ]
+      }
     ]
   },
   {
@@ -1695,7 +1807,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'Beyond Mayfair: London’s Most Compelling Cultural Addresses',
     subtitle: 'Venturing past W1 to uncover the studios, workshops, and private collections shaping the city’s vanguard.',
     category: 'The Cultural Edit',
-    readTime: '8 min read',
+    readTime: '13 min read',
     publishDate: '18 September 2026',
     author: 'Dr. Helena Zhang-Somerset',
     authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
@@ -1705,11 +1817,28 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     contentParagraphs: [
       'It is easy to spend an entire cultural season within a four-square-mile radius of Berkeley Square. Between the auction houses on New Bond Street and the grand institutions of Piccadilly, the density of masterpiece-tier art is undeniable.',
       'Yet the collectors whose opinions we prize most rarely confine themselves to this gilded perimeter. The real creative friction of London happens in industrial yards converted into bronze foundries in Deptford, in light-filled Victorian warehouses along the Regent’s Canal, and in quiet independent presses in Bloomsbury.',
-      'Visiting an artist’s studio in Hackney Wick before their work arrives at an international art fair provides an understanding of creative intention that no gallery wall can replicate. You see the half-formed maquettes, the pigments ground by hand, and the preliminary sketches pinned to whitewashed brickwork.'
+      'Visiting an artist’s studio in Hackney Wick before their work arrives at an international art fair provides an understanding of creative intention that no gallery wall can replicate. You see the half-formed maquettes, the pigments ground by hand, and the preliminary sketches pinned to whitewashed brickwork.',
+      'TGLC coordinates private Saturday studio journeys where members meet vanguard British and international artists in intimate, unhurried dialogue, often acquiring works directly for their family foundations.'
     ],
     editorialImages: [
       '/assets/aistudio/01-Neo-Bankside-Luxury-Penthouse-London-England-UK-640x360_c8f27abb.jpg',
       '/assets/aistudio/royal_opera_gallery.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Deptford & Greenwich: The Heavy Foundry Renaissance',
+        paragraphs: [
+          'Along the tidal reaches of Deptford Creek, surviving industrial yards have become home to sculptors working in cast iron, bronze, and architectural ceramics. Here, the process of lost-wax casting and sand-moulding takes place on an epic scale.',
+          'Through our private introductions, members observe molten metal pours at 1,200 degrees Celsius, followed by conversations over black coffee in the artist’s drawing office. These encounters offer an intimate appreciation of physical labour that elevates the finished sculpture into an artefact of immense human power.'
+        ]
+      },
+      {
+        title: 'Hackney Wick: Vanguard Painting & Light-Filled Lofts',
+        paragraphs: [
+          'In the former industrial buildings framing the River Lee Navigation, contemporary painters are producing large-scale canvases that explore texture, colour field theory, and post-digital narrative. These ateliers remain largely invisible to casual visitors.',
+          'Dr. Helena Zhang-Somerset maintains ongoing dialogues with eighteen working painters across East London, curating private studio visits that allow collectors to engage with works in progress months before gallery representation or public museum acquisition.'
+        ]
+      }
     ]
   },
   {
@@ -1717,7 +1846,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'The English Countryside, Reconsidered',
     subtitle: 'How traditional rural estates are being reinvented through regenerative agriculture, wild wellness, and culinary ambition.',
     category: 'Travel Notes',
-    readTime: '6 min read',
+    readTime: '11 min read',
     publishDate: '04 September 2026',
     author: 'Camilla Vance-Moreau',
     authorRole: 'Director of Private Office & Client Relations',
@@ -1732,6 +1861,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
       '/assets/aistudio/imagereader_3bfec03a.webp'
+    ],
+    subheadings: [
+      {
+        title: 'The Regenerative Kitchen Table',
+        paragraphs: [
+          'The centre of contemporary country living is no longer the formal dining hall; it is the expansive flagstoned kitchen. Estates in the Cotswolds and Sussex now employ resident chefs who collaborate directly with head gardeners and local organic graziers.',
+          'Vegetables are pulled from rich compost hours before service, heritage-breed sheep graze ancient chalk downland, and wild herbs are dried in adjacent glasshouses. The resulting table is rich in flavour, provenance, and vital nourishment.'
+        ]
+      },
+      {
+        title: 'Turnkey Rural Provisioning from Albemarle Street',
+        paragraphs: [
+          'Operating a rural estate from a distance can easily become an operational burden. TGLC provides comprehensive absentee management: pre-arrival heating calibration, pool and tennis court servicing, wine cellar replenishment, and staffing arrangements with vetted local housekeepers and private drivers.',
+          'When members arrive at their country lodge on Friday night, logs are burning in the hearth, preferred groceries are arranged in the pantry, and children’s bedrooms are dressed with fresh Egyptian cotton.'
+        ]
+      }
     ]
   },
   {
@@ -1739,7 +1884,7 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'The Private Dinner: Why the Table Still Matters',
     subtitle: 'In an era of digital disconnection, the shared evening table remains the ultimate sanctuary for genuine conversation.',
     category: 'Dining & Entertaining',
-    readTime: '5 min read',
+    readTime: '10 min read',
     publishDate: '21 August 2026',
     author: 'Mickell Washington',
     authorRole: 'Founder & Managing Director',
@@ -1754,6 +1899,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/Copper-Club_b58a00e9.jpg',
       '/assets/aistudio/tglc_st_james_salon.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'The Geometry of Seating & Conversational Chemistry',
+        paragraphs: [
+          'The greatest host considers guest seating with the care of an ambassador placing diplomatic envoys. Placing individuals of contrasting passions—an astrophysicist beside a contemporary art collector, a private equity founder next to a classical cellist—generates unexpected conversational sparks.',
+          'At TGLC House, our private dining rooms on Albemarle Street seat up to sixteen guests around antique mahogany tables, flanked by original oil portraits and discreet acoustic drapery that ensures discussions remain strictly confidential.'
+        ]
+      },
+      {
+        title: 'Cellar Provenance: Pairing Without Pretense',
+        paragraphs: [
+          'Great wine should serve the table, not dominate it. Our sommelier team sources single-owner cellar collections from Bordeaux, Burgundy, and Piedmont, decanting bottles at precise intervals so that vintages open as the meal progresses.',
+          'Billing is handled seamlessly through the member’s central account, meaning no paper receipts, card machines, or payment interruptions ever disturb the evening’s final conversation.'
+        ]
+      }
     ]
   },
   {
@@ -1761,12 +1922,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'Objects with a Story: A More Personal Approach to Gifting',
     subtitle: 'Moving beyond generic luxury branding towards bespoke commissions and items of genuine provenance.',
     category: 'Objects of Desire',
-    readTime: '4 min read',
+    readTime: '9 min read',
     publishDate: '10 August 2026',
     author: 'Camilla Vance-Moreau',
     authorRole: 'Director of Private Office & Client Relations',
     excerpt: 'Why an author-inscribed first edition or a hand-bound leather journal carries a hundred times more emotional resonance than standard store-bought luxury.',
     heroImage: '/assets/aistudio/savile_row_bespoke.jpg',
+    pullQuote: 'The finest gifts are not bought off a shelf; they are discovered through patient scholarship and quiet artisan relationships.',
     contentParagraphs: [
       'The challenge of gifting for ultra-high-net-worth individuals is well known: they already possess whatever they desire. Any object that can be purchased simply with a credit card at a flagship boutique on Bond Street lacks surprise.',
       'The answer lies in curiosity and scholarship. Finding the specific historical treatise that sparked their interest during university, or commissioning an artisan to hand-craft a bespoke gaming board using fallen wood from their family estate.',
@@ -1775,6 +1937,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/bond_street_jewellery.jpg',
       '/assets/aistudio/About-Luxury-Watches_77cb4520.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'The Antiquarian Discovery',
+        paragraphs: [
+          'Locating an author-inscribed 1925 first edition of The Great Gatsby or an early edition of Churchill’s war memoirs involves searching private library ledgers rather than online marketplaces. TGLC works with antiquarian book scholars across London and Oxford who examine paper rag condition, binding integrity, and provenance signatures.',
+          'Each volume is presented in a custom-built archival solander box lined with acid-free marbled paper and stamped with the recipient’s initials in 22-carat gold leaf.'
+        ]
+      },
+      {
+        title: 'Master Leathercraft & Commissioned Silver',
+        paragraphs: [
+          'From bridle leather document folios cut by hand in Shropshire to bespoke silver cocktail shakers engraved with family crests by Goldsmiths’ Hall craftsmen, commissions turn material into legacy.',
+          'We oversee the entire timeline—from initial design sketch to final hand-delivery—ensuring that every milestone birthday or anniversary is commemorated with peerless artistry.'
+        ]
+      }
     ]
   },
   {
@@ -1782,12 +1960,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'The Quiet Luxury of a Beautifully Managed Home',
     subtitle: 'The unseen operational infrastructure behind London’s most serene private residences.',
     category: 'Private Residences',
-    readTime: '6 min read',
+    readTime: '12 min read',
     publishDate: '25 July 2026',
     author: 'Mickell Washington',
     authorRole: 'Founder & Managing Director',
     excerpt: 'True domestic luxury is not about gilded cornices; it is stepping into a home where the climate is balanced, the fridge is stocked with your preferred roast, and nothing ever fails.',
     heroImage: '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
+    pullQuote: 'A great residence should produce an immediate drop in blood pressure the moment the front door clicks shut.',
     contentParagraphs: [
       'A great residence should produce an immediate drop in blood pressure the moment the front door clicks shut. That feeling of absolute ease is not an accident of architecture; it is the result of continuous, meticulous domestic management.',
       'From seasonal HVAC servicing to maintaining flawless silver without abrasive chemicals, every detail matters. We examine how dedicated residence management liberates families to enjoy their homes rather than manage them.',
@@ -1796,6 +1975,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/01-Lethbridge-House-20-Cornwall-Terrace-Marylebone-London-UK-640x360_b59e806c.jpg',
       '/assets/aistudio/property-category-highlight-82_3dc00e71.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Preventative Maintenance & Building Physics',
+        paragraphs: [
+          'Historic Georgian townhouses in Mayfair and Belgravia require delicate stewardship. Solid brick walls, lime plaster, and heritage sash windows respond continuously to London’s seasonal humidity shifts.',
+          'TGLC coordinates quarterly audits covering thermal envelope performance, water pressure equalization, slate roof flashing, and discreet smart-home automation checks, avoiding emergency callouts before they ever arise.'
+        ]
+      },
+      {
+        title: 'Domestic Protocol & Staff Harmonization',
+        paragraphs: [
+          'A household operates at its highest tier when domestic staff share a single standard of discreet excellence. We draft customized household manuals detailing silver polishing procedures, wine cellar temperature logs, and family linen rotation schedules.',
+          'Whether your home requires a permanent estate manager, a travelling butler, or weekend relief staff, all introduced personnel undergo extensive vetting and non-disclosure execution.'
+        ]
+      }
     ]
   },
   {
@@ -1803,12 +1998,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'Florence Beyond the Familiar',
     subtitle: 'Private palazzo doors, closed chapel viewings, and artisanal workshops across the Oltrarno.',
     category: 'Travel Notes',
-    readTime: '5 min read',
+    readTime: '11 min read',
     publishDate: '12 July 2026',
     author: 'Camilla Vance-Moreau',
     authorRole: 'Director of Private Office & Client Relations',
     excerpt: 'How to experience the Renaissance capital in tranquil intimacy, avoiding the tourist corridors to find private gardens and historic noble libraries.',
     heroImage: '/assets/aistudio/florence_palazzo_courtyard.jpg',
+    pullQuote: 'Florence is an intimate city of private courtyards; behind stone walls that have stood since the Quattrocento lies an untouched world of human warmth.',
     contentParagraphs: [
       'Florence can overwhelm with crowds during peak seasons, yet just across the Arno, behind heavy iron gates, lies an untouched city of private nobility and master craftsmen.',
       'We guide members through private Renaissance palazzi where the original descendants still reside, arranging private viewings of private art archives that have remained in family hands since the Medici era.',
@@ -1817,6 +2013,21 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/royal_opera_gallery.jpg',
       '/assets/aistudio/mayfair_fine_dining.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'The Noble Palazzi of the Oltrarno',
+        paragraphs: [
+          'Cross the Ponte Santa Trinita into the Oltrarno, and the pace of Florence shifts. Here, behind rusticated stone façades, families preserve private courtyards shaded by centuries-old lemon trees and fountains designed by Giambologna.',
+          'TGLC arranges private receptions with palazzo custodians who open private family chapels and private frescoed ballrooms that remain entirely closed to general tour itineraries.'
+        ]
+      },
+      {
+        title: 'Master Shoemakers & Bookbinders',
+        paragraphs: [
+          'In quiet alleys off Via Maggio, artisans continue to craft bespoke leather shoes on hand-carved wooden lasts, and marblers create paper using 16th-century sizing techniques. An afternoon spent in these workshops reveals why Italian craftsmanship remains the global standard of hand-made luxury.'
+        ]
+      }
     ]
   },
   {
@@ -1824,12 +2035,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'What to Ask Before Chartering a Yacht',
     subtitle: 'The crucial questions that separate an ordinary cruise from an extraordinary maritime journey.',
     category: 'Travel Notes',
-    readTime: '7 min read',
+    readTime: '12 min read',
     publishDate: '29 June 2026',
     author: 'Julian Sterling',
     authorRole: 'Director of Fleet, Aviation & Tactical Security',
     excerpt: 'Why the crew chemistry, chef philosophy, and captain’s local anchorage knowledge matter far more than the vessel’s length overall.',
     heroImage: '/assets/aistudio/MAIN-IMAGE-Shangri-La-The-Shard-London-Illuminate-Yacht-_571087f0.jpg',
+    pullQuote: 'A yacht is merely steel and aluminium; it is the crew’s instinct, kindness, and maritime precision that make it a sanctuary.',
     contentParagraphs: [
       'Most charter brokers focus on gross tonnage, swimming platform dimensions, and hull finish. While these are important, experienced charterers know that the success of a charter rests 80% on the captain and crew.',
       'A brilliant captain knows the secluded anchorage on the leeward side of the island where the wind drops to zero at sunset. A gifted chef understands how to create light, invigorating meals tailored to days spent in salt water.',
@@ -1838,6 +2050,22 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/imagereader_3bfec03a.webp',
       '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Captain Anchorage Intelligence & Weather Telemetry',
+        paragraphs: [
+          'The Mediterranean in July and August can bring localized mistral or meltemi winds that transform tranquil bays into choppy anchorages. A seasoned captain anticipates weather fronts 24 hours in advance, pivoting itineraries to sheltered coves without disrupting guest relaxation.',
+          'We evaluate captain tenure and local navigational history in the Cyclades, Balearics, and Amalfi Coast before recommending a charter vessel.'
+        ]
+      },
+      {
+        title: 'The Onboard Culinary Standard',
+        paragraphs: [
+          'Living on the water demands food that is fresh, clean, and vibrant. Ahead of embarkation, your TGLC manager establishes a comprehensive provisioning dossier: favourite olive oils, dietary nuances, specific champagne vintages, and morning espresso preferences.',
+          'Local fish is sourced daily from artisanal fishing boats off the stern, paired with produce brought aboard from organic regional markets.'
+        ]
+      }
     ]
   },
   {
@@ -1845,12 +2073,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'A Collector’s Weekend in London',
     subtitle: 'An insider itinerary through the capital’s most discerning auction houses, private dealers, and framing ateliers.',
     category: 'The Cultural Edit',
-    readTime: '6 min read',
+    readTime: '11 min read',
     publishDate: '14 June 2026',
     author: 'Dr. Helena Zhang-Somerset',
     authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
     excerpt: 'Navigating London with an eye for provenance, scholarship, and quiet discoveries.',
     heroImage: '/assets/aistudio/royal_opera_gallery.jpg',
+    pullQuote: 'London is the world capital of connoisseurship; scholarship and provenance are spoken here as native tongues.',
     contentParagraphs: [
       'London is the world capital of connoisseurship. Beyond the major public sales lie private viewing rooms where pieces of extraordinary museum quality are examined under natural northern light.',
       'We chart a route through Mayfair’s specialist dealers, historic framing ateliers in St James’s, and the private archives of antiquarian print collectors.',
@@ -1859,6 +2088,21 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/bond_street_jewellery.jpg',
       '/assets/aistudio/About-Luxury-Watches_77cb4520.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Auction House Private Rooms: Beyond the Sale Floor',
+        paragraphs: [
+          'During landmark auction weeks, the public sales room can be crowded and pressurized. TGLC members inspect marquee lots in private viewing galleries 48 hours prior to bidding.',
+          'Accompanied by an independent art historian, pieces are examined out of their frames, canvas relining history is reviewed, and condition reports are cross-checked with ultraviolet light.'
+        ]
+      },
+      {
+        title: 'The Archival Framing Atelier',
+        paragraphs: [
+          'A museum-grade frame is not decoration; it is a conservation vessel. We introduce members to historic carvers in London who hand-carve basswood and apply genuine water gilding using 23.75-carat gold leaf and traditional rabbit-skin glue bole, preserving works for generations.'
+        ]
+      }
     ]
   },
   {
@@ -1866,12 +2110,13 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     title: 'The New Culture of Private Hospitality',
     subtitle: 'How the definition of luxury service has evolved from deference to intuitive, intelligent empathy.',
     category: 'Member Stories',
-    readTime: '5 min read',
+    readTime: '10 min read',
     publishDate: '01 June 2026',
     author: 'Mickell Washington',
     authorRole: 'Founder & Managing Director',
     excerpt: 'Why modern principals reject stiff, formal deference in favour of calm competence, authentic warmth, and razor-sharp intellect.',
     heroImage: '/assets/aistudio/tglc_st_james_salon.jpg',
+    pullQuote: 'Our members do not want servants who flatter them; they want peers who understand their world, anticipate their needs, and solve complex problems without drama.',
     contentParagraphs: [
       'For decades, luxury hospitality was associated with white gloves, bowed heads, and scripted pleasantries. Today, that style feels obsolete and artificial.',
       'Our members do not want servants who flatter them; they want peers who understand their world, anticipate their needs, and solve complex problems without drama. It is hospitality based on mutual respect, cultural fluency, and sound judgement.',
@@ -1880,6 +2125,244 @@ export const JOURNAL_ARTICLES: JournalArticle[] = [
     editorialImages: [
       '/assets/aistudio/mayfair_fine_dining.jpg',
       '/assets/aistudio/U2xzhqR8NqpZGDRNVta6Gk_fe26a8c6.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Anticipation Over Reaction',
+        paragraphs: [
+          'True service is measured by the requests a client never needs to articulate. If an international flight is delayed by three hours, the chauffeur’s staging time, the restaurant’s kitchen hold, and the residence’s heating are adjusted automatically.',
+          'The principal simply walks off the aircraft and into a vehicle, unaware of the ten coordination calls made while they were in the air.'
+        ]
+      },
+      {
+        title: 'Tone & Discretion: The Currency of Trust',
+        paragraphs: [
+          'Working inside private family offices requires absolute emotional intelligence. Our senior lifestyle managers are trained in diplomatic discretion, operating as invisible, calm guardians of your time and household privacy.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'close-protection-architecture-tactical-privacy',
+    title: 'The Architecture of Discreet Close Protection: Invisible Security in Prime London',
+    subtitle: 'How former British diplomatic and military protection officers safeguard families without conspicuous militarism.',
+    category: 'London Intelligence',
+    readTime: '13 min read',
+    publishDate: '15 November 2026',
+    author: 'Julian Sterling',
+    authorRole: 'Director of Fleet, Aviation & Tactical Security',
+    excerpt: 'Security in prime residential London is an exercise in route intelligence, polite deterrence, and psychological calmness rather than sirens and bodyguards in sunglasses.',
+    heroImage: '/assets/aistudio/close_protection_security.jpg',
+    pullQuote: 'The most effective security detail in Mayfair is the one no passerby ever realizes is standing in the room.',
+    contentParagraphs: [
+      'Conspicuous security is often an invitation for attention. In a city like London—where sovereign families, prominent entrepreneurs, and global figures navigate private galleries, schools, and dinners—true protection is founded on total integration and advance intelligence.',
+      'Julian Sterling directs TGLC’s tactical security practice, drawing specialists exclusively from the British Armed Forces (Special Forces, Parachute Regiment), the Metropolitan Police Royalty and Specialist Protection Command (RaSP), and UK Diplomatic Protection groups.',
+      'Our officers dress in tailored Savile Row charcoal suits, carry bespoke encrypted micro-earpieces, and maintain an unobtrusive, gentle accompaniment that provides safety without creating social friction for your children or guests.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/luxury_sprinter_jetvan.jpg',
+      '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp'
+    ],
+    subheadings: [
+      {
+        title: 'Advance Reconnaissance & Chokepoint Mapping',
+        paragraphs: [
+          'Every journey begins hours before the principal steps into a vehicle. Our team conducts physical reconnaissance of venue loading bays, emergency exits, medical trauma centres, and traffic chokepoints along prime corridors (Park Lane, Piccadilly, Knightsbridge).',
+          'Primary, secondary, and tertiary evacuation routes are mapped in real-time, cross-referencing live Metropolitan Police communications and municipal traffic telemetry.'
+        ]
+      },
+      {
+        title: 'Executive Fleet Staging & VIP Sprinter Mobility',
+        paragraphs: [
+          'When multiple family members or advisory delegations travel together, standard saloons require splitting the party across separate cars. We deploy bespoke black Mercedes-Benz Sprinter VIP JetVans, custom-fitted with first-class captain seats, encrypted satellite Wi-Fi, and soundproof partitions.',
+          'The vehicle functions as a mobile command post, allowing principals to conduct confidential briefings between airport tarmacs and central London residences in total security.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'the-art-of-bespoke-tailoring-savile-row',
+    title: 'The Art of Bespoke Tailoring: Behind the Shears on Savile Row',
+    subtitle: 'From virgin Scottish cashmere to 60 hours of hand stitching: how master cutters create a modern second skin.',
+    category: 'Objects of Desire',
+    readTime: '12 min read',
+    publishDate: '10 November 2026',
+    author: 'Dr. Helena Zhang-Somerset',
+    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    excerpt: 'A comprehensive investigation into the heritage houses of Savile Row, bespoke basted fittings, and why true bespoke tailoring remains an irreplaceable British art form.',
+    heroImage: '/assets/aistudio/savile_row_bespoke.jpg',
+    pullQuote: 'A bespoke suit does not announce itself with logos; it is recognized by the gentle drape across the shoulder and the stillness it brings to the wearer.',
+    contentParagraphs: [
+      'Along a quiet street of Georgian townhouses behind Regent Street, the craft of bespoke tailoring has remained virtually unchanged for over two centuries. Here on Savile Row, suits are cut by hand from individual brown-paper patterns drafted specifically for each client’s posture.',
+      'Unlike made-to-measure tailoring—which alters existing factory patterns—pure bespoke is born from a blank piece of paper and raw cloth. Over three separate fittings, master cutters shape horsehair canvas, hand-pad lapels with thousands of invisible stitches, and mold wool with heavy damp pressing irons.',
+      'TGLC coordinates closed-door appointments with head cutters who attend members in private Albemarle Street drawing rooms or in their private residences across London, Geneva, and New York.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/bond_street_jewellery.jpg',
+      '/assets/aistudio/tglc_st_james_salon.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'The Basted Fitting: Sculpting in Raw Linen',
+        paragraphs: [
+          'The crucial moment in bespoke creation is the first basted fitting. The suit is assembled with temporary white basting thread, without lining or finished lapels. The cutter evaluates posture, shoulder slope, and natural balance, cutting into the cloth with shears to adjust the drape.',
+          'It is during this session that the jacket begins to conform to the human body, creating an effortless garment that feels as light as a cardigan yet maintains sovereign architectural poise.'
+        ]
+      },
+      {
+        title: 'Cloth Provenance: The Yorkshire & Scottish Mills',
+        paragraphs: [
+          'The soul of British tailoring is the cloth. We introduce members to heritage mills such as Fox Brothers in Somerset (inventors of flannel), Loro Piana, and Scabal, selecting rare superfine 180s wools, vicuña blends, and crisp tropical worsteds designed for international travel.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'the-sovereign-wine-cellar-provenance-acquisitions',
+    title: 'The Sovereign Wine Cellar: Provenance, En Primeur Allocations & Archival Storage',
+    subtitle: 'How multi-generational collectors steward fine wine as cultural heritage and liquid capital.',
+    category: 'Dining & Entertaining',
+    readTime: '14 min read',
+    publishDate: '05 November 2026',
+    author: 'Mickell Washington',
+    authorRole: 'Founder & Managing Director',
+    excerpt: 'Navigating prime Bordeaux allocations, Domaine de la Romanée-Conti verticals, and specialized subterranean bonded storage in Wiltshire stone mines.',
+    heroImage: '/assets/aistudio/mayfair_fine_dining.jpg',
+    pullQuote: 'Fine wine is time captured in glass; its value rests entirely on the integrity of the cellar in which it slept.',
+    contentParagraphs: [
+      'Building an enduring wine collection is an exercise in patience and scholarship. The world’s greatest domaines—from Vosne-Romanée to Pauillac—allocate their finest cases directly to historic merchants who have championed their estates for generations.',
+      'In London, the centre of the global wine trade is anchored in the historic cellars of St James’s. Here, collectors purchase en primeur allocations that will not reach maturity for two decades, resting under bond in subterranean limestone mines in Wiltshire where temperature and humidity remain constant year-round.',
+      'TGLC’s wine desk advises family offices and collectors on cellar acquisitions, single-owner provenance verifications, and private tastings with estate ambassadors.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/Copper-Club_b58a00e9.jpg',
+      '/assets/aistudio/hidden_subterranean_vault_1794295323175.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Single-Owner Provenance: Guarding Against Counterfeits',
+        paragraphs: [
+          'As auction prices for mature Burgundy and Bordeaux have surged, the risk of counterfeit bottles has risen exponentially. We verify bottle provenance through original producer invoices, high-resolution cork inspection, glass bottle mold analysis, and ullage verification.',
+          'Every case acquired through our advisory comes directly from estate cellars or verified single-owner family collections.'
+        ]
+      },
+      {
+        title: 'Cellar Logistics & In-Residence Sommelier Staging',
+        paragraphs: [
+          'When hosting a dinner party at your London townhouse, serving mature vintages requires careful advance staging. We manage the delicate transit of bottles under climate control, stand them upright 48 hours prior to eliminate sediment disturbance, and decant each vintage at the exact hour required for optimal expression.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'private-aviation-fleet-selection-global-ranges',
+    title: 'The Private Aviation Manifesto: Heavy Jets, Airport Slot Access & Zero Friction',
+    subtitle: 'Why airframe matching and diplomatic FBO handling matter far more than hourly charter rates.',
+    category: 'Travel Notes',
+    readTime: '13 min read',
+    publishDate: '28 October 2026',
+    author: 'Julian Sterling',
+    authorRole: 'Director of Fleet, Aviation & Tactical Security',
+    excerpt: 'An operational breakdown of ultra-long-range aviation: Bombardier Global 7500, Gulfstream G650ER, and rapid tarmac dispatch out of RAF Northolt and Farnborough.',
+    heroImage: '/assets/aistudio/private_jet_interior_suite.jpg',
+    pullQuote: 'Private aviation is the preservation of time; when executed with clinical precision, international borders cease to be an obstacle.',
+    contentParagraphs: [
+      'In private aviation, true value is not measured by discount charter brokers; it is defined by airworthiness, crew credentials, cabin pressurization altitude, and airport slot access.',
+      'Flying transatlantic on an ultra-long-range jet such as the Bombardier Global 7500 or Gulfstream G650ER allows passengers to cruise at 51,000 feet, far above commercial airline corridors and atmospheric turbulence. The lower cabin altitude—equivalent to just 2,900 feet above sea level—means arriving in Los Angeles, Tokyo, or Singapore refreshed, with zero travel fatigue.',
+      'Julian Sterling coordinates direct apron access at RAF Northolt, Farnborough, and Biggin Hill, ensuring that members step directly from chauffeured vehicles onto the aircraft airstairs without entering a public terminal.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png',
+      '/assets/aistudio/luxury_sprinter_jetvan.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'RAF Northolt vs London Farnborough: The Strategic Choice',
+        paragraphs: [
+          'RAF Northolt, situated just 13 miles northwest of central London, is an active Royal Air Force base handling private diplomatic and VIP flights. For members residing in Mayfair, Belgravia, or Kensington, arrival at Northolt offers the fastest transit time to the city centre.',
+          'Farnborough Airport, dedicated exclusively to business aviation with award-winning architecture and private hangar facilities, provides complete privacy for intercontinental departures and bespoke catering staging.'
+        ]
+      },
+      {
+        title: 'Cabin Environmental Nuances & Culinary Curation',
+        paragraphs: [
+          'Standard airline catering fails at 40,000 feet due to dry cabin humidity dulling taste receptors. We coordinate with private Mayfair kitchens to prepare menus designed specifically for high-altitude dining: unctuous consommés, rich umami-driven sauces, and fresh organic herbs that retain vibrant aroma in flight.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'the-family-office-concierge-synergy',
+    title: 'The Family Office & Lifestyle Concierge: An Essential Operational Synergy',
+    subtitle: 'How sovereign multi-family offices harmonise financial stewardship with on-the-ground lifestyle execution.',
+    category: 'Member Stories',
+    readTime: '12 min read',
+    publishDate: '20 October 2026',
+    author: 'Camilla Vance-Moreau & Mickell Washington',
+    authorRole: 'Director of Private Office & Managing Director',
+    excerpt: 'Family office CEOs and private bankers focus on asset preservation and governance; TGLC provides the operational muscle that keeps daily family life running seamlessly.',
+    heroImage: '/assets/aistudio/01-Neo-Bankside-Luxury-Penthouse-London-England-UK-640x360_c8f27abb.jpg',
+    pullQuote: 'A family office manages capital; we manage life. When the two operate in complete harmony, the family experiences total serenity.',
+    contentParagraphs: [
+      'Multi-family offices manage complex investment portfolios, cross-border corporate governance, estate planning, and tax structures. Yet when a principal needs an off-market townhouse in Knightsbridge within two weeks, or an urgent private jet charter from London to Zurich during a peak winter weekend, financial structures alone cannot solve the problem.',
+      'TGLC operates as the trusted executive arm for family offices. We interface seamlessly with family office Chief Executives, Chief Financial Officers, and Executive Assistants, executing complex lifestyle mandates while adhering strictly to existing reporting and expense governance.',
+      'All expenditures are consolidated into clear monthly pass-through statements with transparent auditing, eliminating administrative chaos for family accounting teams.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
+      '/assets/aistudio/tglc_st_james_salon.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Confidentiality & Non-Disclosure Rigour',
+        paragraphs: [
+          'Family office principals require absolute confidentiality. TGLC staff operate under comprehensive non-disclosure agreements, using end-to-end encrypted messaging channels and pseudonym bookings for hotels, dining reservations, and travel tickets.',
+          'The principal’s family name never appears on public hotel guest registers or third-party reservation databases.'
+        ]
+      },
+      {
+        title: 'Multi-Generational Support: From Education to Estates',
+        paragraphs: [
+          'Our advisory encompasses the entire family ecosystem: introducing Oxford and Cambridge academic mentors for next-generation principals, coordinating relocation orientations, and managing private equestrian retreats in the English countryside.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'rare-chronographs-and-the-auction-block',
+    title: 'Rare Chronographs & the Auction Block: Navigating Geneva, London & New York Sales',
+    subtitle: 'Insider strategies for bidding on museum-grade Patek Philippe, Rolex Daytona, and FP Journe references.',
+    category: 'Objects of Desire',
+    readTime: '14 min read',
+    publishDate: '15 October 2026',
+    author: 'Dr. Helena Zhang-Somerset',
+    authorRole: 'Head of Cultural Curation & Sub-Rosa Operations',
+    excerpt: 'Condition, dial originality, and archive extracts: what every serious watch collector must evaluate before raising a paddle at major horological auctions.',
+    heroImage: '/assets/aistudio/About-Luxury-Watches_77cb4520.jpg',
+    pullQuote: 'In vintage horology, original condition trumps perfection; an unpolished case with honest patina is worth five polished examples.',
+    contentParagraphs: [
+      'The international auction market for collectible timepieces has evolved into a sophisticated discipline where six-figure discrepancies hinge on minute typographical nuances: the shape of an accent on a dial signature, the serif of a numeral, or the chemical composition of luminous markers under ultraviolet light.',
+      'Collectors navigating major seasonal sales in Geneva, London, and New York face an environment where auction catalogue descriptions must be verified through independent physical examination. At TGLC, our horology advisory conducts hands-on loupe inspections of marquee lots, matching case numbers against manufacturer extract ledgers and verifying movement components.',
+      'We represent members on the auction floor or execute confidential telephone bids on their behalf, ensuring strategic discipline and preventing emotional over-bidding.'
+    ],
+    editorialImages: [
+      '/assets/aistudio/bond_street_jewellery.jpg',
+      '/assets/aistudio/savile_row_bespoke.jpg'
+    ],
+    subheadings: [
+      {
+        title: 'Dial Originality & Ultraviolet Spectroscopy',
+        paragraphs: [
+          'The dial represents up to 80% of a vintage watch’s commercial and aesthetic value. We inspect dials under high-power stereomicroscopes and UV lamps to detect relumed plots, reprinted text, or cosmetic touch-ups.',
+          'Authentic tropicalization—where black dials fade naturally to warm chocolate brown through decades of exposure to ambient light—is verified to distinguish natural aging from artificial heat treatments.'
+        ]
+      },
+      {
+        title: 'The Rise of Modern Independent Horology',
+        paragraphs: [
+          'While vintage Rolex and Patek Philippe remain foundational, independent masters like Kari Voutilainen, Rexhep Rexhepi (Akrivia), and FP Journe have commanded record auction interest. We advise collectors on early serial-number production runs and bespoke dial variants that represent enduring horological significance.'
+        ]
+      }
     ]
   }
 ];

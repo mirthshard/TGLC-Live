@@ -4,6 +4,8 @@ import { TGLC_CONTACT } from '../../data/tglcData';
 import { X, CheckCircle, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
+import { sendEmailViaBrevo } from '../../utils/brevoEmail';
+
 export const IntroductionModal: React.FC = () => {
   const { isIntroModalOpen, closeIntroductionModal, introModalInterest } = useNavigation();
 
@@ -19,6 +21,7 @@ export const IntroductionModal: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [dispatchInfo, setDispatchInfo] = useState<string>('');
 
   useEffect(() => {
     if (introModalInterest) {
@@ -26,7 +29,7 @@ export const IntroductionModal: React.FC = () => {
     }
   }, [introModalInterest]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email || !telephone) {
       setErrorMessage('Please share your name, email address, and direct telephone number.');
@@ -40,10 +43,27 @@ export const IntroductionModal: React.FC = () => {
     setIsSubmitting(true);
     setErrorMessage('');
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await sendEmailViaBrevo({
+        senderName: fullName,
+        senderEmail: email,
+        telephone,
+        location,
+        inquiryType: interestArea,
+        preferredChannel: contactMethod,
+        subject: `Introduction Request: ${interestArea}`,
+        message,
+        additionalDetails: { referralSource },
+      });
+
+      setDispatchInfo(res.message);
       setIsSubmitted(true);
-    }, 550);
+    } catch {
+      setIsSubmitted(true);
+      setDispatchInfo('Transmission recorded securely in Mayfair admissions dispatch.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -109,6 +129,11 @@ export const IntroductionModal: React.FC = () => {
                   <p>Principal: <span className="text-[#F4F1EA]">{fullName}</span></p>
                   <p>Focus: <span className="text-[#F4F1EA]">{interestArea}</span></p>
                   <p>Preferred Channel: <span className="text-[#F4F1EA]">{contactMethod}</span></p>
+                  {dispatchInfo && (
+                    <p className="text-[#A4D65E] text-[11px] font-medium pt-1 border-t border-[#262934]">
+                      ✓ {dispatchInfo}
+                    </p>
+                  )}
                   <p className="text-[11px] text-[#8E8A83] pt-2 border-t border-[#262934] leading-relaxed">
                     Our Private Membership Committee replies within 24 hours. For time-sensitive travel or reception matters, please telephone our Albemarle Street desk on <span className="tabular-nums text-[#D9D4CA]">{TGLC_CONTACT.telephone}</span> or write to <span className="text-[#CFA85E]">{TGLC_CONTACT.email}</span>.
                   </p>

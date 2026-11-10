@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigation } from '../../context/NavigationContext';
 import { CALENDAR_EVENTS } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
-import { ArrowUpRight, MapPin, Grid, List } from 'lucide-react';
-import { motion } from 'motion/react';
+import { ArrowUpRight, MapPin, Grid, List, ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock, Sparkles } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 const CATEGORIES = [
   'All Events',
@@ -28,11 +28,49 @@ const MONTH_LABELS: Record<(typeof MONTHS)[number], string> = {
   OCTOBER: 'October',
 };
 
+const CALENDAR_HERO_SLIDES = [
+  {
+    image: '/assets/aistudio/royal_opera_gallery.jpg',
+    title: 'Covent Garden & Royal Opera Season',
+    subtitle: 'Private Grand Tier boxes, interval drawing rooms, and maestro introductions',
+  },
+  {
+    image: '/assets/aistudio/cotswolds_manor_estate.jpg',
+    title: 'Wimbledon SW19 & English Countryside',
+    subtitle: 'Centre Court debenture allocations, Guards Polo Windsor, and organic estate feasts',
+  },
+  {
+    image: '/assets/aistudio/mayfair_fine_dining.jpg',
+    title: 'Mayfair Cellar Vintages & Frieze Previews',
+    subtitle: 'Unlisted dining rooms, Chateau Margaux masterclasses, and Frieze Masters breakfasts',
+  },
+  {
+    image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
+    title: 'Sub-Rosa London Nocturne & Vault Suppers',
+    subtitle: 'Midnight stealth river launches, 280-year-old bullion vaults, and Soho jazz dens',
+  },
+  {
+    image: '/assets/aistudio/luxury_sprinter_jetvan.jpg',
+    title: 'Airfield Paddock & Static Aviation Days',
+    subtitle: 'Goodwood Drivers Club, Farnborough flight-line access, and VIP JetVan mobility',
+  },
+];
+
 export const CalendarPage: React.FC = () => {
   const { openIntroductionModal } = useNavigation();
   const [selectedCategory, setSelectedCategory] = useState('All Events');
   const [viewMode, setViewMode] = useState<'cards' | 'timeline'>('cards');
   const [selectedMonth, setSelectedMonth] = useState<(typeof MONTHS)[number]>('ALL');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % CALENDAR_HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [isPaused]);
 
   const filteredEvents = CALENDAR_EVENTS.filter((e) => {
     const matchCat =
@@ -44,18 +82,72 @@ export const CalendarPage: React.FC = () => {
 
   return (
     <div className="bg-[#08090C] text-[#F4F1EA] pb-14 overflow-hidden">
-      {/* 1. Full-Bleed Calendar Hero */}
-      <section className="relative min-h-[44vh] sm:min-h-[52vh] flex items-center justify-center border-b border-[#1D1F28] pt-14 sm:pt-18 pb-12 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <motion.img
-            src="/assets/aistudio/royal_opera_gallery.jpg"
-            alt="Royal Opera House & Cultural Season London"
-            animate={{ scale: [1.05, 1, 1.04] }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-full h-full object-cover object-center filter brightness-105 contrast-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/45 to-[#08090C]/65" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/80 via-transparent to-[#08090C]/60" />
+      {/* 1. Cinematic Moving Ken-Burns Calendar Hero Carousel */}
+      <section
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="relative min-h-[50vh] sm:min-h-[58vh] flex items-center justify-center border-b border-[#1D1F28] pt-14 sm:pt-18 pb-14 overflow-hidden select-none"
+      >
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: [1.08, 1, 1.04] }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{
+              opacity: { duration: 1.1, ease: 'easeInOut' },
+              scale: { duration: 20, repeat: Infinity, ease: 'easeInOut' },
+            }}
+            className="absolute inset-0 z-0"
+          >
+            <img
+              src={CALENDAR_HERO_SLIDES[currentSlide].image}
+              alt={CALENDAR_HERO_SLIDES[currentSlide].title}
+              className="w-full h-full object-cover object-center filter brightness-105 contrast-105"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/50 to-[#08090C]/65" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/85 via-transparent to-[#08090C]/65" />
+
+        {/* Carousel Navigation Arrows */}
+        <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 z-20 flex justify-between pointer-events-none">
+          <button
+            type="button"
+            onClick={() => setCurrentSlide((prev) => (prev - 1 + CALENDAR_HERO_SLIDES.length) % CALENDAR_HERO_SLIDES.length)}
+            className="pointer-events-auto p-2.5 bg-[#08090C]/80 hover:bg-[#B98633] text-[#CFA85E] hover:text-[#08090C] border border-[#B98633]/30 transition-all backdrop-blur-md"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % CALENDAR_HERO_SLIDES.length)}
+            className="pointer-events-auto p-2.5 bg-[#08090C]/80 hover:bg-[#B98633] text-[#CFA85E] hover:text-[#08090C] border border-[#B98633]/30 transition-all backdrop-blur-md"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Slide Counter & Indicators */}
+        <div className="absolute bottom-4 inset-x-0 z-20 flex items-center justify-center gap-3">
+          <div className="px-3 py-1 bg-[#08090C]/85 border border-[#B98633]/30 text-[10px] tracking-widest text-[#DDB872] font-mono backdrop-blur-md">
+            0{currentSlide + 1} / 0{CALENDAR_HERO_SLIDES.length} · {CALENDAR_HERO_SLIDES[currentSlide].title}
+          </div>
+          <div className="flex gap-1.5">
+            {CALENDAR_HERO_SLIDES.map((slide, idx) => (
+              <button
+                key={slide.title}
+                onClick={() => setCurrentSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`h-1.5 transition-all ${
+                  idx === currentSlide ? 'w-8 bg-[#CFA85E]' : 'w-2 bg-[#F4F1EA]/30 hover:bg-[#F4F1EA]/60'
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center space-y-4">
