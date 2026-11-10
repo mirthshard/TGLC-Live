@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-tglc-black: #08090C;
+  --color-tglc-charcoal: #12141A;
+  --color-tglc-surface: #181A22;
+  --color-tglc-ivory: #F4F1EA;
+  --color-tglc-stone: #D9D4CA;
+  --color-tglc-muted: #9C968A;
+  --color-tglc-gold: #B98633;
+  --color-tglc-gold-bright: #CFA85E;
+  --color-tglc-gold-glint: #DDB872;
+  --color-tglc-gold-mid: #C4933F;
+  --color-tglc-gold-dark: #8B672B;
+  --color-tglc-bronze: #735320;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #08090C;
+  color: #F4F1EA;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-editorial {
+  font-family: var(--font-serif);
+  text-wrap: balance;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Calibrated brushed antique bronze-gold button styling matching TGLC crest */
+.btn-gold {
+  background: linear-gradient(135deg, #DDB872 0%, #CFA85E 38%, #B98633 72%, #8B672B 100%);
+  color: #08090C;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid #C4933F;
+  box-shadow: 0 4px 20px -2px rgba(185, 134, 51, 0.32);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #E8CA8C 0%, #DDB872 38%, #CFA85E 72%, #B98633 100%);
+  box-shadow: 0 6px 28px 0 rgba(185, 134, 51, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-outline-gold {
+  background: #12141A;
+  color: #F4F1EA;
+  border: 1px solid #8B672B;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+.btn-outline-gold:hover {
+  border-color: #CFA85E;
+  color: #CFA85E;
+  background: #191B24;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08090C;
+}
+::-webkit-scrollbar-thumb {
+  background: #272830;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B672B;
+}
