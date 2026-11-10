@@ -189,6 +189,18 @@ const buildSearchIndex = (): IndexItem[] => {
       searchableContent: 'Sub-Rosa London UFC fighting MMA championship ringside cageside sold-out concerts stadium suites Wembley O2 Arena subterranean bank vault speakeasies midnight supercar runs'
     },
     {
+      id: 'consortium-commission-studio',
+      category: 'services',
+      categoryLabel: 'Interactive Studio',
+      title: 'Private Commission Studio & Itinerary Engine',
+      subtitle: 'Configure Bespoke Lifestyle Scenarios, Armoured Fleet & Protection',
+      snippet: 'Interactive bespoke commission builder for Mayfair sartorial fittings, Thames stealth runs, UFC cageside suites, and RAF Northolt private charters.',
+      meta: 'Studio · Bespoke Orchestration',
+      targetRoute: 'commission-studio',
+      keywords: ['studio', 'commission', 'itinerary', 'builder', 'planner', 'bespoke', 'dossier', 'manifest', 'stealth boat', 'cullinan', 'phantom', 'bunker', 'charter'],
+      searchableContent: 'Commission Studio Bespoke Itinerary Engine Mayfair Savile Row Thames Stealth Run UFC cageside RAF Northolt Challenger 350 armoured fleet manifest dossier'
+    },
+    {
       id: 'consortium-portal',
       category: 'consortium',
       categoryLabel: 'Consortium',

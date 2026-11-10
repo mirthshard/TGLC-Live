@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigation } from '../../context/NavigationContext';
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface Slide {
@@ -208,6 +208,15 @@ export const HeroCarousel: React.FC = () => {
               className="btn-outline-gold px-6 py-3.5 text-xs bg-[#0B0C10]/75 backdrop-blur-md"
             >
               Request an Introduction
+            </button>
+
+            <button
+              onClick={() => navigateTo('commission-studio')}
+              className="px-5 py-3.5 text-xs text-[#DDB872] hover:text-white transition-colors flex items-center gap-1.5"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#CFA85E]" />
+              <span className="hidden sm:inline">Commission Studio</span>
+              <span className="sm:hidden">Studio</span>
             </button>
           </div>
 

@@ -1,30 +1,96 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigation } from '../../context/NavigationContext';
 import { APPROACH_STEPS, FAQS_DATA, TGLC_CONTACT } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
-import { ArrowUpRight, Check, ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Check, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+
+const MEMBERSHIP_HERO_SLIDES = [
+  '/assets/aistudio/tglc_st_james_salon.jpg',
+  '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp',
+  '/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png',
+  '/assets/aistudio/cotswolds_manor_estate.jpg',
+  '/assets/aistudio/bond_street_jewellery.jpg',
+];
 
 export const MembershipPage: React.FC = () => {
   const { openIntroductionModal, navigateTo } = useNavigation();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % MEMBERSHIP_HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   const membershipFaqs = FAQS_DATA.filter((f) => f.category === 'Membership' || f.category === 'Admissions').slice(0, 6);
 
   return (
     <div className="bg-[#08090C] text-[#F4F1EA] pb-14 overflow-hidden">
-      {/* 1. Full-Width Cinematic Membership Hero */}
-      <section className="relative min-h-[46vh] sm:min-h-[54vh] flex items-center justify-center border-b border-[#1D1F28] pt-14 sm:pt-18 pb-12 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <motion.img
-            src="/assets/aistudio/tglc_st_james_salon.jpg"
-            alt="TGLC House Mayfair Private Drawing Room"
-            animate={{ scale: [1.05, 1, 1.04] }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-full h-full object-cover object-center filter brightness-105 contrast-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/45 to-[#08090C]/65" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/80 via-transparent to-[#08090C]/65" />
+      {/* 1. Full-Width Cinematic Moving Membership Hero */}
+      <section
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="relative min-h-[50vh] sm:min-h-[58vh] flex items-center justify-center border-b border-[#1D1F28] pt-14 sm:pt-18 pb-12 overflow-hidden select-none"
+      >
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={MEMBERSHIP_HERO_SLIDES[currentSlide]}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 z-0"
+          >
+            <motion.img
+              src={MEMBERSHIP_HERO_SLIDES[currentSlide]}
+              alt="TGLC Private Membership Sanctums"
+              animate={{ scale: [1.03, 1, 1.02] }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-full h-full object-cover object-center filter brightness-105 contrast-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/45 to-[#08090C]/65" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/80 via-transparent to-[#08090C]/65" />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Carousel Slide Indicators & Controls */}
+        <div className="absolute bottom-5 right-6 z-20 flex items-center gap-3 bg-[#08090C]/85 backdrop-blur-md px-3.5 py-1.5 border border-[#8B672B]/45">
+          <div className="flex items-center gap-1.5">
+            {MEMBERSHIP_HERO_SLIDES.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-[3px] transition-all duration-300 ${
+                  idx === currentSlide ? 'w-6 bg-[#CFA85E]' : 'w-2 bg-[#444] hover:bg-[#888]'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+          <span className="text-[11px] font-mono text-[#DDB872] tabular-nums pl-1">
+            0{currentSlide + 1} / 0{MEMBERSHIP_HERO_SLIDES.length}
+          </span>
+          <div className="flex items-center gap-1 ml-1 border-l border-[#2B2D3A] pl-2">
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + MEMBERSHIP_HERO_SLIDES.length) % MEMBERSHIP_HERO_SLIDES.length)}
+              className="p-1 text-[#9C968A] hover:text-[#CFA85E] transition-colors"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % MEMBERSHIP_HERO_SLIDES.length)}
+              className="p-1 text-[#9C968A] hover:text-[#CFA85E] transition-colors"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center space-y-5">

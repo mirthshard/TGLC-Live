@@ -15,6 +15,8 @@ import {
   Radio,
   Crosshair,
   FileText,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 
 export type SubRosaCategory = 'all' | 'subterranean' | 'industrial' | 'counter-culture' | 'after-hours' | 'itinerary';
@@ -478,12 +480,55 @@ const SUBPAGE_META: Record<
   }
 };
 
+const CLANDESTINE_HERO_SLIDES = [
+  {
+    id: 'stealth-boat',
+    image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
+    title: 'Nocturne Stealth Launch',
+  },
+  {
+    id: 'subterranean-vault',
+    image: '/assets/aistudio/hidden_subterranean_vault_1794295323175.jpg',
+    title: 'Subterranean Vault Chambers',
+  },
+  {
+    id: 'brutalist-penthouse',
+    image: '/assets/aistudio/hidden_brutalist_penthouse_1794295322915.jpg',
+    title: 'Brutalist Concrete Ateliers',
+  },
+  {
+    id: 'copper-club',
+    image: '/assets/aistudio/Copper-Club_b58a00e9.jpg',
+    title: 'Unlisted Member Sanctums',
+  },
+  {
+    id: 'stealth-speed',
+    image: '/assets/aistudio/01_BUGATTI-SOC2022_6775a49f.jpg',
+    title: 'Midnight Sub-Thames Speed',
+  },
+  {
+    id: 'combat-ringside',
+    image: '/assets/aistudio/ufc_arena_ringside.jpg',
+    title: 'Sanctum Combat & Ringside',
+  },
+];
+
 export const HiddenLondonPage: React.FC<{ initialSubPage?: SubRosaCategory }> = ({ initialSubPage }) => {
   const { openIntroductionModal, navigateTo, route } = useNavigation();
   const [activeCategory, setActiveCategory] = useState<SubRosaCategory>(
     initialSubPage || (route.subSection as SubRosaCategory) || 'all'
   );
   const [detailModalDossier, setDetailModalDossier] = useState<ClandestineDossier | null>(null);
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const [isHeroPaused, setIsHeroPaused] = useState(false);
+
+  useEffect(() => {
+    if (isHeroPaused) return;
+    const interval = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev + 1) % CLANDESTINE_HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, [isHeroPaused]);
 
   useEffect(() => {
     if (initialSubPage) {
@@ -586,21 +631,74 @@ export const HiddenLondonPage: React.FC<{ initialSubPage?: SubRosaCategory }> = 
           </motion.div>
         </section>
       ) : (
-        <section className="relative min-h-[50vh] sm:min-h-[58vh] flex items-center justify-center overflow-hidden border-b border-[#20222B] pt-14 sm:pt-18 pb-12">
-          <div className="absolute inset-0 z-0">
-            <motion.img
-              initial={{ scale: 1.05, opacity: 0.92 }}
-              animate={{ scale: [1.05, 1, 1.04], opacity: 1 }}
-              transition={{
-                scale: { duration: 22, repeat: Infinity, ease: 'easeInOut' },
-                opacity: { duration: 0.9 },
-              }}
-              src="/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg"
-              alt="London Sub-Rosa Nocturne"
-              className="w-full h-full object-cover object-center brightness-105 contrast-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/35 to-[#08090C]/50" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/80 via-transparent to-[#08090C]/50 hidden sm:block" />
+        <section
+          onMouseEnter={() => setIsHeroPaused(true)}
+          onMouseLeave={() => setIsHeroPaused(false)}
+          className="relative min-h-[52vh] sm:min-h-[62vh] flex items-center justify-center overflow-hidden border-b border-[#20222B] pt-14 sm:pt-18 pb-12"
+        >
+          {/* Animated Hero Carousel Background with Ken-Burns */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <AnimatePresence initial={false}>
+              <motion.div
+                key={currentHeroSlide}
+                initial={{ opacity: 0, scale: 1.08 }}
+                animate={{ opacity: 1, scale: [1.08, 1, 1.04] }}
+                exit={{ opacity: 0, scale: 1.02 }}
+                transition={{
+                  opacity: { duration: 1.1, ease: 'easeInOut' },
+                  scale: { duration: 18, repeat: Infinity, ease: 'easeInOut' }
+                }}
+                className="absolute inset-0"
+              >
+                <img
+                  src={CLANDESTINE_HERO_SLIDES[currentHeroSlide].image}
+                  alt={CLANDESTINE_HERO_SLIDES[currentHeroSlide].title}
+                  className="w-full h-full object-cover object-center brightness-105 contrast-105"
+                />
+              </motion.div>
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/45 to-[#08090C]/65" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/85 via-transparent to-[#08090C]/65 hidden sm:block" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#08090C_90%)]" />
+
+            {/* Carousel Navigation Arrows */}
+            <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 z-20 flex justify-between pointer-events-none">
+              <button
+                type="button"
+                onClick={() => setCurrentHeroSlide((prev) => (prev - 1 + CLANDESTINE_HERO_SLIDES.length) % CLANDESTINE_HERO_SLIDES.length)}
+                className="pointer-events-auto p-2.5 bg-[#08090C]/75 hover:bg-[#B98633] text-[#CFA85E] hover:text-[#08090C] border border-[#B98633]/30 transition-all backdrop-blur-md"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => setCurrentHeroSlide((prev) => (prev + 1) % CLANDESTINE_HERO_SLIDES.length)}
+                className="pointer-events-auto p-2.5 bg-[#08090C]/75 hover:bg-[#B98633] text-[#CFA85E] hover:text-[#08090C] border border-[#B98633]/30 transition-all backdrop-blur-md"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Slide Indicators & Counter */}
+            <div className="absolute bottom-4 inset-x-0 z-20 flex items-center justify-center gap-3">
+              <div className="px-2.5 py-1 bg-[#08090C]/80 border border-[#B98633]/30 text-[10px] tracking-widest text-[#DDB872] font-mono backdrop-blur-md">
+                0{currentHeroSlide + 1} / 0{CLANDESTINE_HERO_SLIDES.length} · {CLANDESTINE_HERO_SLIDES[currentHeroSlide].title}
+              </div>
+              <div className="flex gap-1.5">
+                {CLANDESTINE_HERO_SLIDES.map((slide, idx) => (
+                  <button
+                    key={slide.id}
+                    onClick={() => setCurrentHeroSlide(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`h-1.5 transition-all ${
+                      idx === currentHeroSlide ? 'w-8 bg-[#CFA85E]' : 'w-2 bg-[#F4F1EA]/30 hover:bg-[#F4F1EA]/60'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center space-y-5">

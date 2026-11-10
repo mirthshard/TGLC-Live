@@ -11,6 +11,7 @@ import {
   ChevronRight,
   Phone,
   MapPin,
+  Sparkles,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -229,6 +230,16 @@ export const Header: React.FC = () => {
               >
                 <span>The Other Side of London</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeMega === 'hidden-london' ? 'rotate-180 text-[#CFA85E]' : ''}`} />
+              </button>
+
+              <button
+                onClick={() => { navigateTo('commission-studio'); closeAll(); }}
+                className={`py-1.5 transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5 hover:text-white ${
+                  isCurrent('commission-studio') ? 'text-[#CFA85E] border-b border-[#B98633]' : 'text-[#D9D4CA]'
+                }`}
+              >
+                <Sparkles className="w-3 h-3 text-[#C4933F]" />
+                <span>Commission Studio</span>
               </button>
 
               <button
@@ -814,6 +825,17 @@ export const Header: React.FC = () => {
                     )}
                   </AnimatePresence>
                 </div>
+
+                <button
+                  onClick={() => { navigateTo('commission-studio'); setIsMobileMenuOpen(false); }}
+                  className="w-full text-left py-3.5 text-sm font-medium text-[#CFA85E] hover:text-white transition-colors flex items-center justify-between"
+                >
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-[#C4933F]" />
+                    <span>Private Commission Studio</span>
+                  </span>
+                  <ChevronRight className="w-4 h-4 text-[#CFA85E]" />
+                </button>
 
                 <button
                   onClick={() => { navigateTo('membership'); setIsMobileMenuOpen(false); }}

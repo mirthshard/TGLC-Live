@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { HeroCarousel } from './HeroCarousel';
 import { useNavigation } from '../../context/NavigationContext';
-import { SERVICES_DATA, ETHOS_PRINCIPLES, LONDON_NEIGHBOURHOODS } from '../../data/tglcData';
+import { SERVICES_DATA, ETHOS_PRINCIPLES, LONDON_NEIGHBOURHOODS, TGLC_CONTACT } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
-import { ArrowUpRight, Flame, Lock } from 'lucide-react';
+import { ArrowUpRight, Flame, Lock, Sparkles, Shield, Compass, Calendar } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const LIFESTYLE_PILLARS = [
@@ -232,10 +232,17 @@ export const HomePage: React.FC = () => {
               <ArrowUpRight className="w-4 h-4 text-[#08090C]" />
             </button>
             <button
-              onClick={() => navigateTo('hidden-london')}
+              onClick={() => navigateTo('commission-studio')}
               className="btn-outline-gold px-7 py-3.5 text-xs flex items-center gap-2"
             >
-              <Lock className="w-3.5 h-3.5 text-[#CFA85E]" />
+              <Sparkles className="w-3.5 h-3.5 text-[#CFA85E]" />
+              <span>Private Commission Studio</span>
+            </button>
+            <button
+              onClick={() => navigateTo('hidden-london')}
+              className="px-6 py-3.5 text-xs text-[#D9D4CA] hover:text-[#CFA85E] transition-colors flex items-center gap-2"
+            >
+              <Lock className="w-3.5 h-3.5 text-[#8B672B]" />
               <span>Explore Sub-Rosa London</span>
             </button>
           </div>
@@ -325,6 +332,151 @@ export const HomePage: React.FC = () => {
                 </button>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <GoldDivider />
+
+      {/* 3.5 The Commission Studio Spotlight (Interactive Itinerary Configurator) */}
+      <section className="py-12 sm:py-16 px-6 sm:px-12 bg-[#0C0D13] border-b border-[#1A1C24] relative overflow-hidden">
+        {/* Subtle decorative grid background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(185,134,51,0.06)_0%,_transparent_70%)] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto space-y-10 relative z-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#1E202B]">
+            <div>
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.26em] text-[#CFA85E] font-medium mb-2">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>The Commission Studio · Bespoke Orchestration</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-5xl text-[#F4F1EA]">
+                Build Your Confidential London & Global Itinerary
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-[#9C968A] max-w-md leading-relaxed font-light">
+              From our Albemarle Street salon, configure tailored lifestyle commissions with assigned armoured or chauffeured fleets, discretion protocols, and private enclave access.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left Preview Grid */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div
+                  onClick={() => navigateTo('commission-studio')}
+                  className="group cursor-pointer p-4 bg-[#12141C] border border-[#222430] hover:border-[#CFA85E] transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="aspect-[16/10] overflow-hidden mb-3 bg-black">
+                      <img
+                        src="/assets/aistudio/savile_row_bespoke.jpg"
+                        alt="Savile Row"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-105"
+                      />
+                    </div>
+                    <span className="text-[10px] uppercase text-[#CFA85E] block">Sartorial & Horology</span>
+                    <h3 className="font-serif text-base text-[#F4F1EA] group-hover:text-[#CFA85E] mt-1 transition-colors">
+                      Savile Row Cut & Vault
+                    </h3>
+                  </div>
+                  <span className="text-[11px] text-[#9C968A] mt-3 font-light">Mayfair in-suite cutter</span>
+                </div>
+
+                <div
+                  onClick={() => navigateTo('commission-studio')}
+                  className="group cursor-pointer p-4 bg-[#12141C] border border-[#222430] hover:border-[#CFA85E] transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="aspect-[16/10] overflow-hidden mb-3 bg-black">
+                      <img
+                        src="/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg"
+                        alt="Thames Stealth"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-105"
+                      />
+                    </div>
+                    <span className="text-[10px] uppercase text-[#CFA85E] block">Sub-Rosa Nocturne</span>
+                    <h3 className="font-serif text-base text-[#F4F1EA] group-hover:text-[#CFA85E] mt-1 transition-colors">
+                      Thames Run & Vault
+                    </h3>
+                  </div>
+                  <span className="text-[11px] text-[#9C968A] mt-3 font-light">45ft Stealth Interceptor</span>
+                </div>
+
+                <div
+                  onClick={() => navigateTo('commission-studio')}
+                  className="group cursor-pointer p-4 bg-[#12141C] border border-[#222430] hover:border-[#CFA85E] transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="aspect-[16/10] overflow-hidden mb-3 bg-black">
+                      <img
+                        src="/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png"
+                        alt="Challenger 350"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-105"
+                      />
+                    </div>
+                    <span className="text-[10px] uppercase text-[#CFA85E] block">Aviation & Mobility</span>
+                    <h3 className="font-serif text-base text-[#F4F1EA] group-hover:text-[#CFA85E] mt-1 transition-colors">
+                      RAF Northolt Charter
+                    </h3>
+                  </div>
+                  <span className="text-[11px] text-[#9C968A] mt-3 font-light">30-sec tarmac handover</span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+                <span className="text-xs text-[#8E8A83]">
+                  Interactive 4-step wizard with real-time encrypted dossier cipher.
+                </span>
+                <button
+                  onClick={() => navigateTo('commission-studio')}
+                  className="btn-gold px-7 py-3 text-xs flex items-center gap-2"
+                >
+                  <span>Launch Private Commission Studio</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#08090C]" />
+                </button>
+              </div>
+            </div>
+
+            {/* Right Live Dossier Teaser Card */}
+            <div className="lg:col-span-5 bg-[#08090C] border border-[#262835] p-6 shadow-2xl relative">
+              <div className="flex items-center justify-between pb-3 border-b border-[#1E202B]">
+                <div className="flex items-center gap-2 text-xs font-mono text-[#CFA85E]">
+                  <Lock className="w-3.5 h-3.5" />
+                  <span>TGLC-MSN-LIVE-2026</span>
+                </div>
+                <span className="text-[10px] font-mono uppercase text-[#C4933F] px-2 py-0.5 bg-[#141620] border border-[#2B2D3A]">
+                  STUDIO ENGINE
+                </span>
+              </div>
+
+              <div className="py-4 space-y-3 text-xs font-light">
+                <div className="flex items-center justify-between text-[#9C968A]">
+                  <span>Operational Status:</span>
+                  <span className="text-[#CFA85E] font-medium">Mayfair Desk Ready</span>
+                </div>
+                <div className="flex items-center justify-between text-[#9C968A]">
+                  <span>Available Fleet:</span>
+                  <span className="text-[#F4F1EA]">Rolls-Royce, Maybach, Thames Stealth</span>
+                </div>
+                <div className="flex items-center justify-between text-[#9C968A]">
+                  <span>Protection Protocols:</span>
+                  <span className="text-[#F4F1EA]">Tier 1 Covert to Tier 3 Faraday</span>
+                </div>
+                <div className="flex items-center justify-between text-[#9C968A]">
+                  <span>Duty Dispatch:</span>
+                  <span className="text-[#F4F1EA] tabular-nums">{TGLC_CONTACT.telephone}</span>
+                </div>
+              </div>
+
+              <button
+                onClick={() => navigateTo('commission-studio')}
+                className="btn-outline-gold w-full py-3 text-xs flex items-center justify-center gap-2"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-[#CFA85E]" />
+                <span>Configure Your Commission Now</span>
+              </button>
+            </div>
           </div>
         </div>
       </section>

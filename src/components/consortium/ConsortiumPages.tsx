@@ -1,10 +1,38 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useNavigation } from '../../context/NavigationContext';
 import { TEAM_MEMBERS, ETHOS_PRINCIPLES, APPROACH_STEPS, LONDON_NEIGHBOURHOODS } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
-import { ArrowUpRight, Shield, Award, Lock, Check, Compass, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Shield, Award, Lock, Check, Compass, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ConsortiumLocationsMap } from './ConsortiumLocationsMap';
+
+const CONSORTIUM_HERO_SLIDES = [
+  {
+    image: '/assets/aistudio/tglc_st_james_salon.jpg',
+    title: 'Albemarle Drawing Room',
+    caption: 'Private chambers at 45 Albemarle Street, Mayfair',
+  },
+  {
+    image: '/assets/aistudio/hero_luxury_london_residence_1794298893032.jpg',
+    title: 'St James’s & Mayfair Heritage',
+    caption: 'Curated architectural stewardship across prime London',
+  },
+  {
+    image: '/assets/aistudio/cotswolds_manor_estate.jpg',
+    title: 'English Country Manors',
+    caption: 'Cotswolds & Oxfordshire weekend estates under single-desk oversight',
+  },
+  {
+    image: '/assets/aistudio/florence_palazzo_courtyard.jpg',
+    title: 'European Keyholder Access',
+    caption: 'Tuscan private palazzos and Geneva vaults',
+  },
+  {
+    image: '/assets/aistudio/savile_row_bespoke.jpg',
+    title: 'Bespoke Patronage',
+    caption: 'Master ateliers and heritage craftsmanship appointments',
+  },
+];
 
 interface ConsortiumPagesProps {
   subPage?: 'overview' | 'about' | 'ethos' | 'approach' | 'network' | 'our-london' | 'privacy';
@@ -43,8 +71,18 @@ const SUB_TABS: {
 export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'overview' }) => {
   const { navigateTo, openIntroductionModal } = useNavigation();
   const [selectedLondonArea, setSelectedLondonArea] = useState(0);
+  const [heroSlide, setHeroSlide] = useState(0);
+  const [isHeroPaused, setIsHeroPaused] = useState(false);
 
   const activeTabLabel = SUB_TABS.find((t) => t.key === subPage)?.label ?? 'Overview';
+
+  useEffect(() => {
+    if (isHeroPaused) return;
+    const timer = setInterval(() => {
+      setHeroSlide((prev) => (prev + 1) % CONSORTIUM_HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [isHeroPaused]);
 
   return (
     <div className="bg-[#08090C] text-[#F4F1EA] pt-6 sm:pt-8 pb-14 overflow-hidden">
@@ -101,17 +139,71 @@ export const ConsortiumPages: React.FC<ConsortiumPagesProps> = ({ subPage = 'ove
       {/* ========================================================= */}
       {subPage === 'overview' && (
         <div className="space-y-10 sm:space-y-12">
-          {/* Full-Width Matching Photographic Hero */}
+          {/* Full-Width Matching Photographic Hero with Moving Carousel */}
           <section className="max-w-7xl mx-auto px-5 sm:px-8">
-            <div className="relative min-h-[400px] sm:min-h-[470px] flex items-end overflow-hidden border border-[#242630] bg-[#12141A]">
-              <motion.img
-                {...HERO_KEN_BURNS}
-                src="/assets/aistudio/tglc_st_james_salon.jpg"
-                alt="TGLC House Mayfair Drawing Room"
-                className="absolute inset-0 w-full h-full object-cover brightness-105 contrast-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/40 to-[#08090C]/20" />
+            <div
+              onMouseEnter={() => setIsHeroPaused(true)}
+              onMouseLeave={() => setIsHeroPaused(false)}
+              className="relative min-h-[420px] sm:min-h-[500px] flex items-end overflow-hidden border border-[#242630] bg-[#12141A]"
+            >
+              <AnimatePresence initial={false}>
+                <motion.div
+                  key={heroSlide}
+                  initial={{ opacity: 0, scale: 1.08 }}
+                  animate={{ opacity: 1, scale: [1.08, 1, 1.04] }}
+                  exit={{ opacity: 0, scale: 1.02 }}
+                  transition={{
+                    opacity: { duration: 1.1, ease: 'easeInOut' },
+                    scale: { duration: 18, repeat: Infinity, ease: 'easeInOut' }
+                  }}
+                  className="absolute inset-0"
+                >
+                  <img
+                    src={CONSORTIUM_HERO_SLIDES[heroSlide].image}
+                    alt={CONSORTIUM_HERO_SLIDES[heroSlide].title}
+                    className="w-full h-full object-cover brightness-105 contrast-105"
+                  />
+                </motion.div>
+              </AnimatePresence>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/45 to-[#08090C]/25" />
               <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/90 via-[#08090C]/45 to-transparent hidden sm:block" />
+
+              {/* Prev / Next controls */}
+              <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setHeroSlide((prev) => (prev - 1 + CONSORTIUM_HERO_SLIDES.length) % CONSORTIUM_HERO_SLIDES.length)}
+                  className="p-2 bg-[#08090C]/75 hover:bg-[#B98633] text-[#CFA85E] hover:text-[#08090C] border border-[#B98633]/30 backdrop-blur-md transition-all"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <div className="px-2 py-1 bg-[#08090C]/80 border border-[#B98633]/30 text-[10px] tracking-widest text-[#DDB872] font-mono">
+                  0{heroSlide + 1} / 0{CONSORTIUM_HERO_SLIDES.length}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setHeroSlide((prev) => (prev + 1) % CONSORTIUM_HERO_SLIDES.length)}
+                  className="p-2 bg-[#08090C]/75 hover:bg-[#B98633] text-[#CFA85E] hover:text-[#08090C] border border-[#B98633]/30 backdrop-blur-md transition-all"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Slide Progress Line Indicator */}
+              <div className="absolute top-0 inset-x-0 z-20 grid grid-cols-5 gap-1 p-1 bg-[#08090C]/40">
+                {CONSORTIUM_HERO_SLIDES.map((slide, idx) => (
+                  <button
+                    key={slide.title}
+                    onClick={() => setHeroSlide(idx)}
+                    className={`h-0.5 transition-all ${
+                      idx === heroSlide ? 'bg-[#CFA85E]' : 'bg-[#F4F1EA]/25 hover:bg-[#F4F1EA]/60'
+                    }`}
+                    aria-label={`Slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
 
               <motion.div
                 initial={{ opacity: 0.01, y: 18 }}

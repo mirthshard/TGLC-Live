@@ -80,6 +80,13 @@ export function getBreadcrumbsForRoute(route: RouteState): BreadcrumbItem[] | nu
     ];
   }
 
+  if (page === 'commission-studio') {
+    return [
+      { label: 'Home', route: 'home' },
+      { label: 'Private Commission Studio', isCurrent: true }
+    ];
+  }
+
   if (page === 'hidden-london') {
     return [
       { label: 'Home', route: 'home' },
@@ -120,7 +127,7 @@ export function getBackLinkForRoute(route: RouteState): BackLinkInfo | null {
     };
   }
 
-  if (page === 'services' || page === 'journal') {
+  if (page === 'services' || page === 'journal' || page === 'commission-studio') {
     return {
       label: 'Return to Home',
       route: 'home'

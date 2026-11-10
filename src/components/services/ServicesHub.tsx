@@ -1,27 +1,88 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { useNavigation } from '../../context/NavigationContext';
 import { SERVICES_DATA, TGLC_CONTACT } from '../../data/tglcData';
 import { GoldDivider } from '../common/GoldDivider';
-import { ArrowUpRight, Shield, Compass, CheckCircle2, Crosshair, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, Shield, Compass, CheckCircle2, Crosshair, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const ServicesHub: React.FC = () => {
   const { navigateTo, openIntroductionModal } = useNavigation();
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SERVICES_DATA.length);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  const activePillar = SERVICES_DATA[currentSlide];
+
   return (
     <div className="bg-[#08090C] text-[#F4F1EA] selection:bg-[#B98633]/30 selection:text-[#F4F1EA] overflow-hidden">
-      {/* 1. Cinematic Full-Width Hero */}
-      <section className="relative min-h-[46vh] sm:min-h-[54vh] flex items-center justify-center border-b border-[#20222B] pt-14 sm:pt-18 pb-12 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <motion.img
-            src="/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png"
-            alt="TGLC Private Aviation & Fleet"
-            animate={{ scale: [1.05, 1, 1.04] }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-full h-full object-cover object-center brightness-105 contrast-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/35 to-[#08090C]/55" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/80 via-[#08090C]/30 to-[#08090C]/70 hidden sm:block" />
+      {/* 1. Cinematic Full-Width Moving Hero Carousel */}
+      <section
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        className="relative min-h-[50vh] sm:min-h-[58vh] flex items-center justify-center border-b border-[#20222B] pt-14 sm:pt-18 pb-12 overflow-hidden select-none"
+      >
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={activePillar.id}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute inset-0 z-0"
+          >
+            <motion.img
+              src={activePillar.heroImage}
+              alt={activePillar.title}
+              animate={{ scale: [1.03, 1, 1.02] }}
+              transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-full h-full object-cover object-center brightness-105 contrast-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08090C] via-[#08090C]/40 to-[#08090C]/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08090C]/85 via-[#08090C]/35 to-[#08090C]/75 hidden sm:block" />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Carousel Slide Indicators & Controls */}
+        <div className="absolute bottom-5 right-6 z-20 flex items-center gap-3 bg-[#08090C]/85 backdrop-blur-md px-3.5 py-1.5 border border-[#8B672B]/45">
+          <div className="flex items-center gap-1.5">
+            {SERVICES_DATA.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-[3px] transition-all duration-300 ${
+                  idx === currentSlide ? 'w-6 bg-[#CFA85E]' : 'w-2 bg-[#444] hover:bg-[#888]'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+          <span className="text-[11px] font-mono text-[#DDB872] tabular-nums pl-1">
+            0{currentSlide + 1} / 0{SERVICES_DATA.length}
+          </span>
+          <div className="flex items-center gap-1 ml-1 border-l border-[#2B2D3A] pl-2">
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev - 1 + SERVICES_DATA.length) % SERVICES_DATA.length)}
+              className="p-1 text-[#9C968A] hover:text-[#CFA85E] transition-colors"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => setCurrentSlide((prev) => (prev + 1) % SERVICES_DATA.length)}
+              className="p-1 text-[#9C968A] hover:text-[#CFA85E] transition-colors"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 text-center space-y-5">

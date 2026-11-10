@@ -25,6 +25,9 @@ import { ContactPage } from './components/contact/ContactPage';
 import { FAQPage } from './components/faq/FAQPage';
 import { LegalPages } from './components/legal/LegalPages';
 import { HiddenLondonPage } from './components/access/HiddenLondonPage';
+import { CommissionStudio } from './components/studio/CommissionStudio';
+import { AmbienceProvider } from './context/AmbienceContext';
+import { AmbiencePlayer } from './components/common/AmbiencePlayer';
 import { AccessGate } from './components/auth/AccessGate';
 import { motion } from 'motion/react';
 
@@ -56,6 +59,8 @@ const PageContent: React.FC = () => {
       return <SubServiceDetailPage serviceId={route.serviceId} subServiceId={route.subServiceId} />;
     case 'membership':
       return <MembershipPage />;
+    case 'commission-studio':
+      return <CommissionStudio />;
     case 'member-portal':
       return <MemberPortal />;
     case 'calendar':
@@ -113,19 +118,22 @@ function PageContentWrapper() {
 export default function App() {
   return (
     <AccessGate>
-      <NavigationProvider>
-        <div className="min-h-screen bg-[#08090C] text-[#F4F1EA] flex flex-col font-sans selection:bg-[#B98633]/30 selection:text-[#F4F1EA]">
-          <Header />
-          <BreadcrumbNav />
-          <main className="flex-1">
-            <PageContentWrapper />
-          </main>
-          <Footer />
-          <GlobalSearchModal />
-          <IntroductionModal />
-          <CookieBanner />
-        </div>
-      </NavigationProvider>
+      <AmbienceProvider>
+        <NavigationProvider>
+          <div className="min-h-screen bg-[#08090C] text-[#F4F1EA] flex flex-col font-sans selection:bg-[#B98633]/30 selection:text-[#F4F1EA]">
+            <Header />
+            <BreadcrumbNav />
+            <main className="flex-1">
+              <PageContentWrapper />
+            </main>
+            <Footer />
+            <GlobalSearchModal />
+            <IntroductionModal />
+            <CookieBanner />
+            <AmbiencePlayer />
+          </div>
+        </NavigationProvider>
+      </AmbienceProvider>
     </AccessGate>
   );
 }

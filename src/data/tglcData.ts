@@ -761,11 +761,12 @@ export const SERVICES_DATA: ServiceCategory[] = [
     tagline: 'Quiet certainty in motion.',
     shortDesc: 'Chauffeured fleets, private vehicle sourcing, discreet close protection coordination, and privacy-first lifestyle architecture.',
     overview: 'Mobility should be calm, punctual, and invisible. We coordinate premium chauffeured transfers, bespoke luxury vehicle procurement, and discreet personal protection services. Our focus is never on ostentation or militaristic display; it is on quiet professionalism, route intelligence, defensive driving, and respectful discretion.',
-    heroImage: '/assets/aistudio/U2xzhqR8NqpZGDRNVta6Gk_fe26a8c6.jpg',
+    heroImage: '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp',
     galleryImages: [
-      '/assets/aistudio/13eb42bb98d7c1aedc2b236ef64ad276_ef6c13db.jpg',
       '/assets/aistudio/rolls-cullian-featured_a41abfa9.webp',
-      '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp'
+      '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp',
+      '/assets/aistudio/01_BUGATTI-SOC2022_6775a49f.jpg',
+      '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg'
     ],
     features: [
       'Dedicated, vetted London chauffeurs with advanced defensive driving credentials',
@@ -798,7 +799,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
             outcome: 'Punctual door-to-door transfer, vehicle waiting on standby throughout.'
           }
         ],
-        image: '/assets/aistudio/13eb42bb98d7c1aedc2b236ef64ad276_ef6c13db.jpg'
+        image: '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp'
       },
       {
         id: 'private-car-sourcing',
@@ -855,7 +856,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
             outcome: 'Valet parking coordinated, zero street congestion, smooth departures.'
           }
         ],
-        image: '/assets/aistudio/pt3_6ef34e91.jpg'
+        image: '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp'
       },
       {
         id: 'privacy-first-lifestyle-support',

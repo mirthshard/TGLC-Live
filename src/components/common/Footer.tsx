@@ -151,6 +151,7 @@ export const Footer: React.FC = () => {
           <div className="col-span-2 md:col-span-2 lg:col-span-1 min-w-0 space-y-4">
             <h5 className="font-serif text-base tracking-wide text-[#F4F1EA]">Engagement</h5>
             <ul className="space-y-3">
+              <li><button onClick={() => navigateTo('commission-studio')} className="text-[#CFA85E] hover:text-white transition-colors text-left font-medium">Commission Studio</button></li>
               <li><button onClick={() => navigateTo('membership')} className="hover:text-[#CFA85E] transition-colors text-left">Membership Charters</button></li>
               <li><button onClick={() => navigateTo('calendar')} className="hover:text-[#CFA85E] transition-colors text-left">The London Calendar</button></li>
               <li><button onClick={() => navigateTo('journal')} className="hover:text-[#CFA85E] transition-colors text-left">The TGLC Journal</button></li>

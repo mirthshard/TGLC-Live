@@ -11,6 +11,7 @@ export type PageRoute =
   | 'service-detail' // requires serviceId
   | 'subservice-detail' // requires serviceId & subServiceId
   | 'membership'
+  | 'commission-studio' // Interactive Lifestyle Commission & Itinerary Studio
   | 'calendar'
   | 'journal'
   | 'journal-article' // requires articleSlug

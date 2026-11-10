@@ -79,3 +79,15 @@ h1, h2, h3, .font-editorial {
 ::-webkit-scrollbar-thumb:hover {
   background: #8B672B;
 }
+
+/* Theme Remix Variances */
+html.theme-nocturne-stealth body {
+  background-color: #050608;
+  color: #EDECE6;
+}
+
+html.theme-white-tie body {
+  background-color: #070912;
+  color: #F8F5EE;
+}
+
