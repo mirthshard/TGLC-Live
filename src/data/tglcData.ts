@@ -181,11 +181,11 @@ export const SERVICES_DATA: ServiceCategory[] = [
     tagline: 'Every movement, considered.',
     shortDesc: 'Discreet private aviation, tailored charter fleets, expeditionary itineraries, and private island sanctuaries coordinated with zero friction.',
     overview: 'From a last-minute departure from Farnborough to a month-long exploration of the Japanese archipelago, our travel desk plans each journey with exacting precision. We maintain direct relationships with owner-operators of heavy jets, superyacht brokers, and private estate custodians, ensuring absolute safety, confidentiality, and seamless door-to-door transit.',
-    heroImage: '/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png',
+    heroImage: '/assets/aistudio/private_jet_interior_suite.jpg',
     galleryImages: [
-      '/assets/aistudio/private_jet_interior_suite.jpg',
+      '/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png',
       '/assets/aistudio/SSB7Se1D48BQSnNL_dd2452d5.png',
-      '/assets/aistudio/6a194620490b49214619b628_file_8wpx83o3_8d7f9f53.png'
+      '/assets/aistudio/MAIN-IMAGE-Shangri-La-The-Shard-London-Illuminate-Yacht-_571087f0.jpg'
     ],
     features: [
       'Direct coordination with vetted Part 135 / AOC private aircraft operators',
@@ -761,11 +761,11 @@ export const SERVICES_DATA: ServiceCategory[] = [
     tagline: 'Quiet certainty in motion.',
     shortDesc: 'Chauffeured fleets, private vehicle sourcing, discreet close protection coordination, and privacy-first lifestyle architecture.',
     overview: 'Mobility should be calm, punctual, and invisible. We coordinate premium chauffeured transfers, bespoke luxury vehicle procurement, and discreet personal protection services. Our focus is never on ostentation or militaristic display; it is on quiet professionalism, route intelligence, defensive driving, and respectful discretion.',
-    heroImage: '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp',
+    heroImage: '/assets/aistudio/luxury_sprinter_jetvan.jpg',
     galleryImages: [
       '/assets/aistudio/close_protection_security.jpg',
-      '/assets/aistudio/luxury_sprinter_jetvan.jpg',
-      '/assets/aistudio/rolls-cullian-featured_a41abfa9.webp',
+      '/assets/aistudio/rolls-royce-cullinan-chauffeur-service-events_d3e6e421.webp',
+      '/assets/aistudio/01_BUGATTI-SOC2022_6775a49f.jpg',
       '/assets/aistudio/best-luxury-cars-2024_ab87bb7b.webp'
     ],
     features: [
@@ -896,7 +896,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     tagline: 'A life arranged with precision.',
     shortDesc: 'Everyday lifestyle administration, private staff recruitment, education guidance, health coordination, and family milestone management.',
     overview: 'High-performing principals and family offices face an endless stream of complex administrative, domestic, and personal demands. TGLC operates as a trusted extension of your private office. We handle the time-consuming nuances—from sourcing specialist academic tutors to coordinating private medical consultations and managing intricate family calendars.',
-    heroImage: '/assets/aistudio/01-Lethbridge-House-20-Cornwall-Terrace-Marylebone-London-UK-640x360_b59e806c.jpg',
+    heroImage: '/assets/aistudio/tglc_st_james_salon.jpg',
     galleryImages: [
       '/assets/aistudio/property-category-highlight-82_3dc00e71.jpg',
       '/assets/aistudio/01-Neo-Bankside-Luxury-Penthouse-London-England-UK-640x360_c8f27abb.jpg',

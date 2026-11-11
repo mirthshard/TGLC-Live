@@ -38,6 +38,7 @@ export const NavigationProvider: React.FC<{ children: ReactNode }> = ({ children
     if (hash === 'services') return { page: 'services' };
     if (hash === 'membership') return { page: 'membership' };
     if (hash === 'commission-studio' || hash === 'studio') return { page: 'commission-studio' };
+    if (hash === 'case-studies' || hash === 'itineraries' || hash === 'portfolio') return { page: 'case-studies' };
     if (hash === 'calendar') return { page: 'calendar' };
     if (hash === 'journal') return { page: 'journal' };
     if (hash === 'member-portal' || hash === 'portal') return { page: 'member-portal' };

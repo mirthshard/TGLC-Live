@@ -87,6 +87,13 @@ export function getBreadcrumbsForRoute(route: RouteState): BreadcrumbItem[] | nu
     ];
   }
 
+  if (page === 'case-studies') {
+    return [
+      { label: 'Home', route: 'home' },
+      { label: 'Signature Itineraries & Case Studies', isCurrent: true }
+    ];
+  }
+
   if (page === 'hidden-london') {
     return [
       { label: 'Home', route: 'home' },

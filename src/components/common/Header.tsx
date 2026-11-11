@@ -34,43 +34,79 @@ const SUB_ROSA_SECTORS = [
     title: 'Subterranean Sanctums',
     mobileTitle: '1. Subterranean Sanctums & Bunkers',
     image: '/assets/aistudio/hidden_subterranean_vault_1794295323175.jpg',
-    desc: 'Churchill’s sealed Paddock Citadel, Kingsway Cold War tunnels, and 300-year-old Bank bullion vaults.',
+    desc: 'Churchill’s Paddock Citadel, Kingsway Cold War tunnels, and 300-year-old Lombard bullion vaults.',
     highlight: false,
   },
   {
     page: 'hidden-london-industrial',
     sector: 'Sector 02',
-    title: 'Brutalist & Industrial',
-    mobileTitle: '2. Brutalist & Industrial Enclaves',
+    title: 'Brutalist & Monoliths',
+    mobileTitle: '2. Brutalist Enclaves & Monoliths',
     image: '/assets/aistudio/hidden_brutalist_penthouse_1794295322915.jpg',
-    desc: 'Barbican concrete sky-sanctums, Bermondsey bespoke coachbuilding armouries, and Deptford foundries.',
+    desc: 'Barbican concrete sky-sanctums, Bermondsey leather armouries, and Millennium Mills silos.',
+    highlight: false,
+  },
+  {
+    page: 'hidden-london-combat',
+    sector: 'Sector 03',
+    title: 'Underground Combat',
+    mobileTitle: '3. Underground Combat & Rings',
+    image: '/assets/aistudio/pt3_6ef34e91.jpg',
+    desc: 'Bethnal Green railway arch sparring, unsanctioned exhibition bouts, and UFC London cageside.',
+    highlight: false,
+  },
+  {
+    page: 'hidden-london-gaming',
+    sector: 'Sector 04',
+    title: 'Secret Gaming Salons',
+    mobileTitle: '4. Secret High-Stakes Gaming',
+    image: '/assets/aistudio/Copper-Club_b58a00e9.jpg',
+    desc: 'Unlisted £50k Soho poker vaults, Curzon St chemin-de-fer, and Seven Dials backgammon.',
+    highlight: false,
+  },
+  {
+    page: 'hidden-london-maritime',
+    sector: 'Sector 05',
+    title: 'Thames Nocturne Stealth',
+    mobileTitle: '5. Thames Stealth Interceptors',
+    image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
+    desc: '02:00 AM matte-black interceptor sprints, abandoned Isle of Dogs drydocks, and blackwater insertion.',
     highlight: false,
   },
   {
     page: 'hidden-london-gastronomy',
-    sector: 'Sector 03',
-    title: 'Sub-Rosa Gastronomy',
-    mobileTitle: '3. Counter-Culture Gastronomy',
-    image: '/assets/aistudio/Copper-Club_b58a00e9.jpg',
-    desc: 'Unlisted Dalston cellar omakases, Hackney vinyl listening bars, and private woodfire kitchen takeovers.',
+    sector: 'Sector 06',
+    title: 'Subversive Gastronomy',
+    mobileTitle: '6. Subversive Counter-Culture Gastronomy',
+    image: '/assets/aistudio/hidden_secret_gastronomy_1794295323821.jpg',
+    desc: 'Dalston 8-seat vinyl omakase, butcher freezer cocktail rooms, and Clerkenwell meat-hook hearth feasts.',
+    highlight: false,
+  },
+  {
+    page: 'hidden-london-exploration',
+    sector: 'Sector 07',
+    title: 'Restricted Heights & Rails',
+    mobileTitle: '7. Forbidden Heights & Restricted Rails',
+    image: '/assets/aistudio/WhatsApp_Image_233026-11-05_at_00.22.11_0ad9b38a.jpeg',
+    desc: 'Abandoned Down Street station, 700ft midnight crane vistas, and Tower Bridge bascule chamber crypts.',
     highlight: false,
   },
   {
     page: 'hidden-london-after-hours',
-    sector: 'Sector 04',
-    title: 'Speed, Stealth & Combat',
-    mobileTitle: '4. Speed, Stealth & Combat',
-    image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
-    desc: '45ft matte-black Thames stealth runs, midnight tunnel supercar runs, and cageside UFC access.',
+    sector: 'Sector 08',
+    title: 'Bohemian Jazz Salons',
+    mobileTitle: '8. Clandestine Bohemian Jazz Salons',
+    image: '/assets/aistudio/WhatsApp_Image_32026-11-05_at_00.21.03_0cd77377.jpeg',
+    desc: 'Meard St 02:00 AM unadvertised jazz crypts, pre-ban absinthe dens, and Spitalfields watch exchanges.',
     highlight: false,
   },
   {
     page: 'hidden-london-itinerary',
     sector: 'Operational Plan',
     title: '007 Rogue 24-Hr Mission',
-    mobileTitle: '5. 007 Rogue 24-Hour Itinerary',
+    mobileTitle: '9. 007 Rogue 24-Hour Mission Plan',
     image: '/assets/aistudio/01_BUGATTI-SOC2022_6775a49f.jpg',
-    desc: 'The definitive 24-hour dawn-to-dawn undercover mission blueprint through London’s hidden quarters.',
+    desc: 'The definitive dusk-to-dawn undercover mission blueprint through London’s hidden quarters.',
     highlight: true,
   },
 ] as const;
@@ -240,6 +276,15 @@ export const Header: React.FC = () => {
               >
                 <Sparkles className="w-3 h-3 text-[#C4933F]" />
                 <span>Commission Studio</span>
+              </button>
+
+              <button
+                onClick={() => { navigateTo('case-studies'); closeAll(); }}
+                className={`py-1.5 transition-colors whitespace-nowrap shrink-0 hover:text-white ${
+                  isCurrent('case-studies') ? 'text-[#CFA85E] border-b border-[#B98633]' : 'text-[#D9D4CA]'
+                }`}
+              >
+                Case Studies
               </button>
 
               <button
@@ -595,7 +640,7 @@ export const Header: React.FC = () => {
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 max-h-[62vh] overflow-y-auto pr-1">
                   {SUB_ROSA_SECTORS.map((sec) => (
                     <div
                       key={sec.page}
@@ -835,6 +880,14 @@ export const Header: React.FC = () => {
                     <span>Private Commission Studio</span>
                   </span>
                   <ChevronRight className="w-4 h-4 text-[#CFA85E]" />
+                </button>
+
+                <button
+                  onClick={() => { navigateTo('case-studies'); setIsMobileMenuOpen(false); }}
+                  className="w-full text-left py-3.5 text-sm font-medium text-[#F4F1EA] hover:text-[#CFA85E] transition-colors flex items-center justify-between"
+                >
+                  <span>Case Studies (22 Itineraries)</span>
+                  <ChevronRight className="w-4 h-4 text-[#555]" />
                 </button>
 
                 <button

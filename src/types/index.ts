@@ -12,6 +12,7 @@ export type PageRoute =
   | 'subservice-detail' // requires serviceId & subServiceId
   | 'membership'
   | 'commission-studio' // Interactive Lifestyle Commission & Itinerary Studio
+  | 'case-studies' // Curated Portfolio of 20+ Signature Itineraries & Case Studies
   | 'calendar'
   | 'journal'
   | 'journal-article' // requires articleSlug
@@ -21,7 +22,11 @@ export type PageRoute =
   | 'hidden-london'
   | 'hidden-london-subterranean'
   | 'hidden-london-industrial'
+  | 'hidden-london-combat'
+  | 'hidden-london-gaming'
+  | 'hidden-london-maritime'
   | 'hidden-london-gastronomy'
+  | 'hidden-london-exploration'
   | 'hidden-london-after-hours'
   | 'hidden-london-itinerary'
   | 'privacy-policy'

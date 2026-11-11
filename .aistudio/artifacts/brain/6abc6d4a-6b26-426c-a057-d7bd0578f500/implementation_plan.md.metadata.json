@@ -1,0 +1,6 @@
+{
+  "summary":  "Implementation plan for the full multi-tier Member & Management Portal application. Features simulated Supabase client with live credentials for Client, Family Office, Senior Manager, and Security Lead roles, complete with request dispatching, direct encrypted messaging, interactive itinerary with coordinates, and confidential billing/retained hours.",
+  "updatedAt":  "2026-11-11T08:54:26.588303035Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

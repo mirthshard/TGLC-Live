@@ -26,6 +26,7 @@ import { FAQPage } from './components/faq/FAQPage';
 import { LegalPages } from './components/legal/LegalPages';
 import { HiddenLondonPage } from './components/access/HiddenLondonPage';
 import { CommissionStudio } from './components/studio/CommissionStudio';
+import { CaseStudiesPage } from './components/casestudies/CaseStudiesPage';
 import { AmbienceProvider } from './context/AmbienceContext';
 import { AmbiencePlayer } from './components/common/AmbiencePlayer';
 import { AccessGate } from './components/auth/AccessGate';
@@ -61,6 +62,8 @@ const PageContent: React.FC = () => {
       return <MembershipPage />;
     case 'commission-studio':
       return <CommissionStudio />;
+    case 'case-studies':
+      return <CaseStudiesPage />;
     case 'member-portal':
       return <MemberPortal />;
     case 'calendar':
@@ -79,8 +82,16 @@ const PageContent: React.FC = () => {
       return <HiddenLondonPage initialSubPage="subterranean" />;
     case 'hidden-london-industrial':
       return <HiddenLondonPage initialSubPage="industrial" />;
+    case 'hidden-london-combat':
+      return <HiddenLondonPage initialSubPage="underground-combat" />;
+    case 'hidden-london-gaming':
+      return <HiddenLondonPage initialSubPage="clandestine-gaming" />;
+    case 'hidden-london-maritime':
+      return <HiddenLondonPage initialSubPage="maritime-nocturne" />;
     case 'hidden-london-gastronomy':
       return <HiddenLondonPage initialSubPage="counter-culture" />;
+    case 'hidden-london-exploration':
+      return <HiddenLondonPage initialSubPage="urban-exploration" />;
     case 'hidden-london-after-hours':
       return <HiddenLondonPage initialSubPage="after-hours" />;
     case 'hidden-london-itinerary':

@@ -712,9 +712,125 @@ export const HomePage: React.FC = () => {
           <div className="text-center pt-2">
             <button
               onClick={() => navigateTo('services')}
-              className="btn-outline-gold px-8 py-4 text-xs"
+              className="btn-outline-gold px-8 py-4 text-xs cursor-pointer"
             >
               View Complete Practice Directory & Disciplines →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <GoldDivider />
+
+      {/* 5.5 Case Studies & 20+ Signature Itineraries Showcase */}
+      <section className="py-14 sm:py-20 px-6 sm:px-12 bg-gradient-to-b from-[#08090C] via-[#0D0F16] to-[#08090C] border-b border-[#1A1C24] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-10 relative z-10">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-[#1E202B]">
+            <div>
+              <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.26em] text-[#CFA85E] font-medium mb-2">
+                <Compass className="w-3.5 h-3.5" />
+                <span>The Case Studies Portfolio · 22 Executed Mandates</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-5xl text-[#F4F1EA]">
+                Real Journeys. Flawless Orchestration.
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-[#9C968A] max-w-md leading-relaxed font-light">
+              Explore 22 comprehensive case studies spanning state visits, supersonic transfers, closed-door heritage vaults, and edgy sub-rosa nocturnal adventures under tactical protection.
+            </p>
+          </div>
+
+          {/* 4 Featured Itinerary Journey Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: 'Thames Stealth & Bullion Catacombs',
+                tag: 'Sub-Rosa Nocturne',
+                kicker: 'Square Mile & River',
+                image: '/assets/aistudio/hidden_nocturne_stealth_boat_1794295325076.jpg',
+                desc: '02:00 AM 40-knot river sprint beneath Tower Bridge followed by private Armagnac banquet behind 20-ton bank doors.',
+                meta: 'Evening · 5 Hours · Tier 2 Security',
+              },
+              {
+                title: 'RAF Northolt to Florence Renaissance Villa',
+                tag: 'Aviation & Palazzos',
+                kicker: 'London to Tuscany',
+                image: '/assets/aistudio/698157105b08bd0b828e954b_file_k95qb05z_c7bc7f74.png',
+                desc: '30-second apron tarmac handover from Cullinan to Challenger 350; staffed Chianti palazzo with fires lit before arrival.',
+                meta: '3 Days · 72 Hours · Diplomatic Gate',
+              },
+              {
+                title: 'Bermondsey Arch Unsanctioned Fight Night',
+                tag: 'Combat & Arenas',
+                kicker: 'Southwark Viaduct',
+                image: '/assets/aistudio/pt3_6ef34e91.jpg',
+                desc: 'Ringside corner table under Victorian brick arches for raw pugilism with Julian Sterling SAS close protection escort.',
+                meta: 'Full Evening · Tier 2 Tactical Escort',
+              },
+              {
+                title: '3,000-Acre Cotswolds Manor & Michelin Hearth',
+                tag: 'Estates & Field Sports',
+                kicker: 'Oxfordshire Countryside',
+                image: '/assets/aistudio/cotswolds_manor_estate.jpg',
+                desc: 'Agusta 109 helicopter transfer from Battersea in 24 minutes; clays, bespoke Purdeys, and 8-course woodfire feast.',
+                meta: 'Weekend · 48 Hours · Full Buyout',
+              },
+            ].map((card, idx) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0.9, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.01 }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.45, delay: idx * 0.05 }}
+                onClick={() => navigateTo('case-studies')}
+                className="bg-[#12141C] border border-[#222430] hover:border-[#CFA85E] transition-all cursor-pointer overflow-hidden group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="aspect-[16/10] overflow-hidden bg-black relative">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-105 contrast-105"
+                    />
+                    <div className="absolute top-2 left-2 bg-[#08090C]/85 backdrop-blur-md px-2.5 py-1 text-[10px] text-[#CFA85E] font-medium border border-[#8B672B]/40">
+                      {card.tag}
+                    </div>
+                  </div>
+                  <div className="p-5 space-y-2">
+                    <span className="text-[10px] uppercase tracking-wider text-[#9C968A] block">{card.kicker}</span>
+                    <h3 className="font-serif text-lg text-[#F4F1EA] group-hover:text-[#DDB872] transition-colors leading-snug">
+                      {card.title}
+                    </h3>
+                    <p className="text-xs text-[#B5AFA3] leading-relaxed font-light line-clamp-3">
+                      {card.desc}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-5 pt-0">
+                  <div className="pt-3 border-t border-[#1E202B] flex items-center justify-between text-[11px] text-[#C4933F]">
+                    <span>{card.meta}</span>
+                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={() => navigateTo('case-studies')}
+              className="btn-gold px-8 py-3.5 text-xs flex items-center gap-2 cursor-pointer"
+            >
+              <span>Explore All 22 Signature Itineraries & Case Studies</span>
+              <ArrowUpRight className="w-4 h-4 text-[#08090C]" />
+            </button>
+            <button
+              onClick={() => navigateTo('commission-studio')}
+              className="btn-outline-gold px-6 py-3.5 text-xs cursor-pointer"
+            >
+              Build Your Own Commission →
             </button>
           </div>
         </div>
